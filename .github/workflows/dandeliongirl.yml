@@ -42,5 +42,5 @@ jobs:
     - name: save artifact
       uses: actions/upload-artifact@v3
       with:
-        name: amaranth-release
+        name: dandelion-release
         path: D:\a\vaporgirl\vaporgirl\dandeliongirl\Builds\VisualStudio2019\x64\Release
