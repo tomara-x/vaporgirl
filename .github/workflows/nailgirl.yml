@@ -1,13 +1,13 @@
-name: dandeliongirl
+name: nailgirl
 
 on:
   push:
     paths:
-      - 'dandeliongirl/**'
+      - 'nailgirl/**'
 
 env:
   # Path to the solution file relative to the root of the project.
-  SOLUTION_FILE_PATH: ./dandeliongirl/Builds/VisualStudio2019/dandeliongirl.sln
+  SOLUTION_FILE_PATH: ./nailgirl/Builds/VisualStudio2019/nailgirl.sln
 
   # Configuration type to build.
   # You can convert this to a build matrix if you need coverage of multiple configuration types.
@@ -42,5 +42,5 @@ jobs:
     - name: save artifact
       uses: actions/upload-artifact@v3
       with:
-        name: dandeliongirl-release
-        path: D:\a\vaporgirl\vaporgirl\dandeliongirl\Builds\VisualStudio2019\x64\Release
+        name: nailgirl-release
+        path: D:\a\vaporgirl\vaporgirl\nailgirl\Builds\VisualStudio2019\x64\Release
