@@ -14,10 +14,7 @@ jobs:
         mkdir test
         echo "trans them!" > test/file1
         echo "trans them all!" > test/file2
-        
-    - uses: edgarrc/action-7z@v1
-      with:
-        args: 7z a -tzip test.zip -r test
+        7z a -tzip test.zip -r test
       
     - uses: "marvinpinto/action-automatic-releases@latest"
       with:
