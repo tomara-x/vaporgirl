@@ -13,7 +13,7 @@ jobs:
       run: |
         mkdir test
         echo "trans them all!" > test/file
-        zip -r test.zip test
+        7za a -r test.zip test
       
     - uses: "marvinpinto/action-automatic-releases@latest"
       with:
