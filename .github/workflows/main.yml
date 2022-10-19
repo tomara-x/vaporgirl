@@ -1,0 +1,25 @@
+name: release-test
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+    - name: hi
+      shell: bash
+      run: |
+        mkdir test
+        echo "trans them all!" > test/file
+        zip -r test.zip test
+      
+    - uses: "marvinpinto/action-automatic-releases@latest"
+      with:
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        automatic_release_tag: "lmao"
+        prerelease: true
+        title: "hot stuff"
+        files: |
+          test.zip
