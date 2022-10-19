@@ -38,9 +38,25 @@ jobs:
       # Add additional options to the MSBuild command line here (like platform or verbosity level).
       # See https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference
       run: msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} ${{env.SOLUTION_FILE_PATH}}
+      
+    - name: ziptie her!
+      shell: bash
+      run: 7z a -tzip dandeliongirl.zip -r dandeliongirl/Builds/VisualStudio2019/x64/Release
 
-    - name: save artifact
-      uses: actions/upload-artifact@v3
+    - name: release
+      uses: "marvinpinto/action-automatic-releases@latest"
       with:
-        name: dandeliongirl-release
-        path: D:\a\vaporgirl\vaporgirl\dandeliongirl\Builds\VisualStudio2019\x64\Release
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        # automatic_release_tag: "dandeliongirl"
+        prerelease: false
+        title: "dandeliongirl"
+        files: |
+          dandeliongirl.zip
+
+    # don't need these now
+    #- name: save artifact
+    #  uses: actions/upload-artifact@v3
+    #  with:
+    #    name: dandeliongirl-release
+    #    path: D:\a\vaporgirl\vaporgirl\dandeliongirl\Builds\VisualStudio2019\x64\Release
+
