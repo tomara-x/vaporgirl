@@ -47,7 +47,7 @@ jobs:
       uses: "marvinpinto/action-automatic-releases@latest"
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
-        # automatic_release_tag: "dandeliongirl"
+        automatic_release_tag: "girl"
         prerelease: false
         title: "dandeliongirl"
         files: |

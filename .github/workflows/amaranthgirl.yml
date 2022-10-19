@@ -41,13 +41,13 @@ jobs:
       
     - name: ziptie her!
       shell: bash
-      run: 7z a -tzip amaranthgirl.zip -r D:\a\vaporgirl\vaporgirl\amaranthgirl\Builds\VisualStudio2019\x64\Release
+      run: 7z a -tzip amaranthgirl.zip -r amaranthgirl/Builds/VisualStudio2019/x64/Release
 
     - name: release
       uses: "marvinpinto/action-automatic-releases@latest"
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
-        # automatic_release_tag: "amaranthgirl"
+        automatic_release_tag: "girl"
         prerelease: false
         title: "amaranthgirl"
         files: |

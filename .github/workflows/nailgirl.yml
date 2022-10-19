@@ -41,13 +41,13 @@ jobs:
       
     - name: ziptie her!
       shell: bash
-      run: 7z a -tzip nailgirl.zip -r D:\a\vaporgirl\vaporgirl\nailgirl\Builds\VisualStudio2019\x64\Release
+      run: 7z a -tzip nailgirl.zip -r nailgirl/Builds/VisualStudio2019/x64/Release
 
     - name: release
       uses: "marvinpinto/action-automatic-releases@latest"
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
-        # automatic_release_tag: "nailgirl"
+        automatic_release_tag: "girl"
         prerelease: false
         title: "nailgirl"
         files: |
