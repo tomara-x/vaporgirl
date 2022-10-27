@@ -11609,7 +11609,7 @@ class JuceGUI : public GUI, public MetaDataUI, public juce::Component
             // Mininum size in case of empty GUI
             if (fCurrentBox) {
                 juce::Rectangle<int> res = fCurrentBox->getSize();
-                res.setSize(std::max<int>(1, res.getWidth()), std::max<int>(1, res.getHeight()));
+                res.setSize(std::max<int>(1, res.getWidth()*0.8), std::max<int>(1, res.getHeight()*0.8));
                 return res;
             } else {
                 return juce::Rectangle<int>(0, 0, 1, 1);
@@ -16260,16 +16260,14 @@ class mydsp : public base_dsp {
 		ui_interface->openHorizontalBox("moodygirl");
 		ui_interface->openVerticalBox("0");
 		ui_interface->declare(&fVslider53, "0", "");
-		ui_interface->declare(&fVslider53, "scale", "log");
 		ui_interface->declare(&fVslider53, "style", "knob");
-		ui_interface->addVerticalSlider("base freq", &fVslider53, FAUSTFLOAT(2.2e+02f), FAUSTFLOAT(1e+01f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(0.1f));
+		ui_interface->addVerticalSlider("base freq", &fVslider53, FAUSTFLOAT(2.2e+02f), FAUSTFLOAT(1.0f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(0.1f));
 		ui_interface->declare(&fVslider52, "1", "");
 		ui_interface->declare(&fVslider52, "style", "knob");
 		ui_interface->addVerticalSlider("freq mult", &fVslider52, FAUSTFLOAT(1.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(2.0f), FAUSTFLOAT(0.001f));
 		ui_interface->declare(&fVslider51, "2", "");
-		ui_interface->declare(&fVslider51, "scale", "log");
 		ui_interface->declare(&fVslider51, "style", "knob");
-		ui_interface->addVerticalSlider("freq shift", &fVslider51, FAUSTFLOAT(2.2e+02f), FAUSTFLOAT(1.0f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(0.1f));
+		ui_interface->addVerticalSlider("freq shift", &fVslider51, FAUSTFLOAT(2.2e+02f), FAUSTFLOAT(0.0f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(0.1f));
 		ui_interface->declare(&fVslider49, "3", "");
 		ui_interface->declare(&fVslider49, "style", "knob");
 		ui_interface->addVerticalSlider("base dur", &fVslider49, FAUSTFLOAT(1.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1e+01f), FAUSTFLOAT(0.001f));
@@ -16285,16 +16283,14 @@ class mydsp : public base_dsp {
 		ui_interface->closeBox();
 		ui_interface->openVerticalBox("1");
 		ui_interface->declare(&fVslider46, "0", "");
-		ui_interface->declare(&fVslider46, "scale", "log");
 		ui_interface->declare(&fVslider46, "style", "knob");
-		ui_interface->addVerticalSlider("base freq", &fVslider46, FAUSTFLOAT(2.2e+02f), FAUSTFLOAT(1e+01f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(0.1f));
+		ui_interface->addVerticalSlider("base freq", &fVslider46, FAUSTFLOAT(2.2e+02f), FAUSTFLOAT(1.0f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(0.1f));
 		ui_interface->declare(&fVslider45, "1", "");
 		ui_interface->declare(&fVslider45, "style", "knob");
 		ui_interface->addVerticalSlider("freq mult", &fVslider45, FAUSTFLOAT(1.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(2.0f), FAUSTFLOAT(0.001f));
 		ui_interface->declare(&fVslider44, "2", "");
-		ui_interface->declare(&fVslider44, "scale", "log");
 		ui_interface->declare(&fVslider44, "style", "knob");
-		ui_interface->addVerticalSlider("freq shift", &fVslider44, FAUSTFLOAT(2.2e+02f), FAUSTFLOAT(1.0f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(0.1f));
+		ui_interface->addVerticalSlider("freq shift", &fVslider44, FAUSTFLOAT(2.2e+02f), FAUSTFLOAT(0.0f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(0.1f));
 		ui_interface->declare(&fVslider42, "3", "");
 		ui_interface->declare(&fVslider42, "style", "knob");
 		ui_interface->addVerticalSlider("base dur", &fVslider42, FAUSTFLOAT(1.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1e+01f), FAUSTFLOAT(0.001f));
@@ -16310,16 +16306,14 @@ class mydsp : public base_dsp {
 		ui_interface->closeBox();
 		ui_interface->openVerticalBox("2");
 		ui_interface->declare(&fVslider39, "0", "");
-		ui_interface->declare(&fVslider39, "scale", "log");
 		ui_interface->declare(&fVslider39, "style", "knob");
-		ui_interface->addVerticalSlider("base freq", &fVslider39, FAUSTFLOAT(2.2e+02f), FAUSTFLOAT(1e+01f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(0.1f));
+		ui_interface->addVerticalSlider("base freq", &fVslider39, FAUSTFLOAT(2.2e+02f), FAUSTFLOAT(1.0f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(0.1f));
 		ui_interface->declare(&fVslider38, "1", "");
 		ui_interface->declare(&fVslider38, "style", "knob");
 		ui_interface->addVerticalSlider("freq mult", &fVslider38, FAUSTFLOAT(1.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(2.0f), FAUSTFLOAT(0.001f));
 		ui_interface->declare(&fVslider37, "2", "");
-		ui_interface->declare(&fVslider37, "scale", "log");
 		ui_interface->declare(&fVslider37, "style", "knob");
-		ui_interface->addVerticalSlider("freq shift", &fVslider37, FAUSTFLOAT(2.2e+02f), FAUSTFLOAT(1.0f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(0.1f));
+		ui_interface->addVerticalSlider("freq shift", &fVslider37, FAUSTFLOAT(2.2e+02f), FAUSTFLOAT(0.0f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(0.1f));
 		ui_interface->declare(&fVslider35, "3", "");
 		ui_interface->declare(&fVslider35, "style", "knob");
 		ui_interface->addVerticalSlider("base dur", &fVslider35, FAUSTFLOAT(1.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1e+01f), FAUSTFLOAT(0.001f));
@@ -16335,16 +16329,14 @@ class mydsp : public base_dsp {
 		ui_interface->closeBox();
 		ui_interface->openVerticalBox("3");
 		ui_interface->declare(&fVslider32, "0", "");
-		ui_interface->declare(&fVslider32, "scale", "log");
 		ui_interface->declare(&fVslider32, "style", "knob");
-		ui_interface->addVerticalSlider("base freq", &fVslider32, FAUSTFLOAT(2.2e+02f), FAUSTFLOAT(1e+01f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(0.1f));
+		ui_interface->addVerticalSlider("base freq", &fVslider32, FAUSTFLOAT(2.2e+02f), FAUSTFLOAT(1.0f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(0.1f));
 		ui_interface->declare(&fVslider31, "1", "");
 		ui_interface->declare(&fVslider31, "style", "knob");
 		ui_interface->addVerticalSlider("freq mult", &fVslider31, FAUSTFLOAT(1.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(2.0f), FAUSTFLOAT(0.001f));
 		ui_interface->declare(&fVslider30, "2", "");
-		ui_interface->declare(&fVslider30, "scale", "log");
 		ui_interface->declare(&fVslider30, "style", "knob");
-		ui_interface->addVerticalSlider("freq shift", &fVslider30, FAUSTFLOAT(2.2e+02f), FAUSTFLOAT(1.0f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(0.1f));
+		ui_interface->addVerticalSlider("freq shift", &fVslider30, FAUSTFLOAT(2.2e+02f), FAUSTFLOAT(0.0f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(0.1f));
 		ui_interface->declare(&fVslider28, "3", "");
 		ui_interface->declare(&fVslider28, "style", "knob");
 		ui_interface->addVerticalSlider("base dur", &fVslider28, FAUSTFLOAT(1.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1e+01f), FAUSTFLOAT(0.001f));
@@ -16360,16 +16352,14 @@ class mydsp : public base_dsp {
 		ui_interface->closeBox();
 		ui_interface->openVerticalBox("4");
 		ui_interface->declare(&fVslider25, "0", "");
-		ui_interface->declare(&fVslider25, "scale", "log");
 		ui_interface->declare(&fVslider25, "style", "knob");
-		ui_interface->addVerticalSlider("base freq", &fVslider25, FAUSTFLOAT(2.2e+02f), FAUSTFLOAT(1e+01f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(0.1f));
+		ui_interface->addVerticalSlider("base freq", &fVslider25, FAUSTFLOAT(2.2e+02f), FAUSTFLOAT(1.0f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(0.1f));
 		ui_interface->declare(&fVslider24, "1", "");
 		ui_interface->declare(&fVslider24, "style", "knob");
 		ui_interface->addVerticalSlider("freq mult", &fVslider24, FAUSTFLOAT(1.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(2.0f), FAUSTFLOAT(0.001f));
 		ui_interface->declare(&fVslider23, "2", "");
-		ui_interface->declare(&fVslider23, "scale", "log");
 		ui_interface->declare(&fVslider23, "style", "knob");
-		ui_interface->addVerticalSlider("freq shift", &fVslider23, FAUSTFLOAT(2.2e+02f), FAUSTFLOAT(1.0f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(0.1f));
+		ui_interface->addVerticalSlider("freq shift", &fVslider23, FAUSTFLOAT(2.2e+02f), FAUSTFLOAT(0.0f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(0.1f));
 		ui_interface->declare(&fVslider21, "3", "");
 		ui_interface->declare(&fVslider21, "style", "knob");
 		ui_interface->addVerticalSlider("base dur", &fVslider21, FAUSTFLOAT(1.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1e+01f), FAUSTFLOAT(0.001f));
@@ -16385,16 +16375,14 @@ class mydsp : public base_dsp {
 		ui_interface->closeBox();
 		ui_interface->openVerticalBox("5");
 		ui_interface->declare(&fVslider18, "0", "");
-		ui_interface->declare(&fVslider18, "scale", "log");
 		ui_interface->declare(&fVslider18, "style", "knob");
-		ui_interface->addVerticalSlider("base freq", &fVslider18, FAUSTFLOAT(2.2e+02f), FAUSTFLOAT(1e+01f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(0.1f));
+		ui_interface->addVerticalSlider("base freq", &fVslider18, FAUSTFLOAT(2.2e+02f), FAUSTFLOAT(1.0f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(0.1f));
 		ui_interface->declare(&fVslider17, "1", "");
 		ui_interface->declare(&fVslider17, "style", "knob");
 		ui_interface->addVerticalSlider("freq mult", &fVslider17, FAUSTFLOAT(1.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(2.0f), FAUSTFLOAT(0.001f));
 		ui_interface->declare(&fVslider16, "2", "");
-		ui_interface->declare(&fVslider16, "scale", "log");
 		ui_interface->declare(&fVslider16, "style", "knob");
-		ui_interface->addVerticalSlider("freq shift", &fVslider16, FAUSTFLOAT(2.2e+02f), FAUSTFLOAT(1.0f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(0.1f));
+		ui_interface->addVerticalSlider("freq shift", &fVslider16, FAUSTFLOAT(2.2e+02f), FAUSTFLOAT(0.0f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(0.1f));
 		ui_interface->declare(&fVslider14, "3", "");
 		ui_interface->declare(&fVslider14, "style", "knob");
 		ui_interface->addVerticalSlider("base dur", &fVslider14, FAUSTFLOAT(1.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1e+01f), FAUSTFLOAT(0.001f));
@@ -16410,16 +16398,14 @@ class mydsp : public base_dsp {
 		ui_interface->closeBox();
 		ui_interface->openVerticalBox("6");
 		ui_interface->declare(&fVslider11, "0", "");
-		ui_interface->declare(&fVslider11, "scale", "log");
 		ui_interface->declare(&fVslider11, "style", "knob");
-		ui_interface->addVerticalSlider("base freq", &fVslider11, FAUSTFLOAT(2.2e+02f), FAUSTFLOAT(1e+01f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(0.1f));
+		ui_interface->addVerticalSlider("base freq", &fVslider11, FAUSTFLOAT(2.2e+02f), FAUSTFLOAT(1.0f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(0.1f));
 		ui_interface->declare(&fVslider10, "1", "");
 		ui_interface->declare(&fVslider10, "style", "knob");
 		ui_interface->addVerticalSlider("freq mult", &fVslider10, FAUSTFLOAT(1.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(2.0f), FAUSTFLOAT(0.001f));
 		ui_interface->declare(&fVslider9, "2", "");
-		ui_interface->declare(&fVslider9, "scale", "log");
 		ui_interface->declare(&fVslider9, "style", "knob");
-		ui_interface->addVerticalSlider("freq shift", &fVslider9, FAUSTFLOAT(2.2e+02f), FAUSTFLOAT(1.0f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(0.1f));
+		ui_interface->addVerticalSlider("freq shift", &fVslider9, FAUSTFLOAT(2.2e+02f), FAUSTFLOAT(0.0f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(0.1f));
 		ui_interface->declare(&fVslider7, "3", "");
 		ui_interface->declare(&fVslider7, "style", "knob");
 		ui_interface->addVerticalSlider("base dur", &fVslider7, FAUSTFLOAT(1.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1e+01f), FAUSTFLOAT(0.001f));
@@ -16435,16 +16421,14 @@ class mydsp : public base_dsp {
 		ui_interface->closeBox();
 		ui_interface->openVerticalBox("7");
 		ui_interface->declare(&fVslider4, "0", "");
-		ui_interface->declare(&fVslider4, "scale", "log");
 		ui_interface->declare(&fVslider4, "style", "knob");
-		ui_interface->addVerticalSlider("base freq", &fVslider4, FAUSTFLOAT(2.2e+02f), FAUSTFLOAT(1e+01f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(0.1f));
+		ui_interface->addVerticalSlider("base freq", &fVslider4, FAUSTFLOAT(2.2e+02f), FAUSTFLOAT(1.0f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(0.1f));
 		ui_interface->declare(&fVslider3, "1", "");
 		ui_interface->declare(&fVslider3, "style", "knob");
 		ui_interface->addVerticalSlider("freq mult", &fVslider3, FAUSTFLOAT(1.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(2.0f), FAUSTFLOAT(0.001f));
 		ui_interface->declare(&fVslider2, "2", "");
-		ui_interface->declare(&fVslider2, "scale", "log");
 		ui_interface->declare(&fVslider2, "style", "knob");
-		ui_interface->addVerticalSlider("freq shift", &fVslider2, FAUSTFLOAT(2.2e+02f), FAUSTFLOAT(1.0f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(0.1f));
+		ui_interface->addVerticalSlider("freq shift", &fVslider2, FAUSTFLOAT(2.2e+02f), FAUSTFLOAT(0.0f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(0.1f));
 		ui_interface->declare(&fVslider0, "3", "");
 		ui_interface->declare(&fVslider0, "style", "knob");
 		ui_interface->addVerticalSlider("base dur", &fVslider0, FAUSTFLOAT(1.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1e+01f), FAUSTFLOAT(0.001f));
@@ -17926,116 +17910,116 @@ class mydsp : public base_dsp {
 	#define FAUST_ACTIVES 56
 	#define FAUST_PASSIVES 0
 
-	FAUST_ADDVERTICALSLIDER("moodygirl/ 0/base freq", fVslider53, 2.2e+02f, 1e+01f, 2e+04f, 0.1f);
+	FAUST_ADDVERTICALSLIDER("moodygirl/ 0/base freq", fVslider53, 2.2e+02f, 1.0f, 2e+04f, 0.1f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 0/freq mult", fVslider52, 1.0f, 0.0f, 2.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER("moodygirl/ 0/freq shift", fVslider51, 2.2e+02f, 1.0f, 2e+04f, 0.1f);
+	FAUST_ADDVERTICALSLIDER("moodygirl/ 0/freq shift", fVslider51, 2.2e+02f, 0.0f, 2e+04f, 0.1f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 0/base dur", fVslider49, 1.0f, 0.0f, 1e+01f, 0.001f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 0/dur div", fVslider50, 1.0f, 0.001f, 2.0f, 0.001f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 0/base amp", fVslider55, 0.1f, 0.0f, 2.0f, 0.001f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 0/amp div", fVslider54, 1.0f, 0.01f, 2.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER("moodygirl/ 1/base freq", fVslider46, 2.2e+02f, 1e+01f, 2e+04f, 0.1f);
+	FAUST_ADDVERTICALSLIDER("moodygirl/ 1/base freq", fVslider46, 2.2e+02f, 1.0f, 2e+04f, 0.1f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 1/freq mult", fVslider45, 1.0f, 0.0f, 2.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER("moodygirl/ 1/freq shift", fVslider44, 2.2e+02f, 1.0f, 2e+04f, 0.1f);
+	FAUST_ADDVERTICALSLIDER("moodygirl/ 1/freq shift", fVslider44, 2.2e+02f, 0.0f, 2e+04f, 0.1f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 1/base dur", fVslider42, 1.0f, 0.0f, 1e+01f, 0.001f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 1/dur div", fVslider43, 1.0f, 0.001f, 2.0f, 0.001f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 1/base amp", fVslider48, 0.1f, 0.0f, 2.0f, 0.001f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 1/amp div", fVslider47, 1.0f, 0.01f, 2.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER("moodygirl/ 2/base freq", fVslider39, 2.2e+02f, 1e+01f, 2e+04f, 0.1f);
+	FAUST_ADDVERTICALSLIDER("moodygirl/ 2/base freq", fVslider39, 2.2e+02f, 1.0f, 2e+04f, 0.1f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 2/freq mult", fVslider38, 1.0f, 0.0f, 2.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER("moodygirl/ 2/freq shift", fVslider37, 2.2e+02f, 1.0f, 2e+04f, 0.1f);
+	FAUST_ADDVERTICALSLIDER("moodygirl/ 2/freq shift", fVslider37, 2.2e+02f, 0.0f, 2e+04f, 0.1f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 2/base dur", fVslider35, 1.0f, 0.0f, 1e+01f, 0.001f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 2/dur div", fVslider36, 1.0f, 0.001f, 2.0f, 0.001f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 2/base amp", fVslider41, 0.1f, 0.0f, 2.0f, 0.001f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 2/amp div", fVslider40, 1.0f, 0.01f, 2.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER("moodygirl/ 3/base freq", fVslider32, 2.2e+02f, 1e+01f, 2e+04f, 0.1f);
+	FAUST_ADDVERTICALSLIDER("moodygirl/ 3/base freq", fVslider32, 2.2e+02f, 1.0f, 2e+04f, 0.1f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 3/freq mult", fVslider31, 1.0f, 0.0f, 2.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER("moodygirl/ 3/freq shift", fVslider30, 2.2e+02f, 1.0f, 2e+04f, 0.1f);
+	FAUST_ADDVERTICALSLIDER("moodygirl/ 3/freq shift", fVslider30, 2.2e+02f, 0.0f, 2e+04f, 0.1f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 3/base dur", fVslider28, 1.0f, 0.0f, 1e+01f, 0.001f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 3/dur div", fVslider29, 1.0f, 0.001f, 2.0f, 0.001f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 3/base amp", fVslider34, 0.1f, 0.0f, 2.0f, 0.001f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 3/amp div", fVslider33, 1.0f, 0.01f, 2.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER("moodygirl/ 4/base freq", fVslider25, 2.2e+02f, 1e+01f, 2e+04f, 0.1f);
+	FAUST_ADDVERTICALSLIDER("moodygirl/ 4/base freq", fVslider25, 2.2e+02f, 1.0f, 2e+04f, 0.1f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 4/freq mult", fVslider24, 1.0f, 0.0f, 2.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER("moodygirl/ 4/freq shift", fVslider23, 2.2e+02f, 1.0f, 2e+04f, 0.1f);
+	FAUST_ADDVERTICALSLIDER("moodygirl/ 4/freq shift", fVslider23, 2.2e+02f, 0.0f, 2e+04f, 0.1f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 4/base dur", fVslider21, 1.0f, 0.0f, 1e+01f, 0.001f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 4/dur div", fVslider22, 1.0f, 0.001f, 2.0f, 0.001f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 4/base amp", fVslider27, 0.1f, 0.0f, 2.0f, 0.001f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 4/amp div", fVslider26, 1.0f, 0.01f, 2.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER("moodygirl/ 5/base freq", fVslider18, 2.2e+02f, 1e+01f, 2e+04f, 0.1f);
+	FAUST_ADDVERTICALSLIDER("moodygirl/ 5/base freq", fVslider18, 2.2e+02f, 1.0f, 2e+04f, 0.1f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 5/freq mult", fVslider17, 1.0f, 0.0f, 2.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER("moodygirl/ 5/freq shift", fVslider16, 2.2e+02f, 1.0f, 2e+04f, 0.1f);
+	FAUST_ADDVERTICALSLIDER("moodygirl/ 5/freq shift", fVslider16, 2.2e+02f, 0.0f, 2e+04f, 0.1f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 5/base dur", fVslider14, 1.0f, 0.0f, 1e+01f, 0.001f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 5/dur div", fVslider15, 1.0f, 0.001f, 2.0f, 0.001f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 5/base amp", fVslider20, 0.1f, 0.0f, 2.0f, 0.001f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 5/amp div", fVslider19, 1.0f, 0.01f, 2.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER("moodygirl/ 6/base freq", fVslider11, 2.2e+02f, 1e+01f, 2e+04f, 0.1f);
+	FAUST_ADDVERTICALSLIDER("moodygirl/ 6/base freq", fVslider11, 2.2e+02f, 1.0f, 2e+04f, 0.1f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 6/freq mult", fVslider10, 1.0f, 0.0f, 2.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER("moodygirl/ 6/freq shift", fVslider9, 2.2e+02f, 1.0f, 2e+04f, 0.1f);
+	FAUST_ADDVERTICALSLIDER("moodygirl/ 6/freq shift", fVslider9, 2.2e+02f, 0.0f, 2e+04f, 0.1f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 6/base dur", fVslider7, 1.0f, 0.0f, 1e+01f, 0.001f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 6/dur div", fVslider8, 1.0f, 0.001f, 2.0f, 0.001f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 6/base amp", fVslider13, 0.1f, 0.0f, 2.0f, 0.001f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 6/amp div", fVslider12, 1.0f, 0.01f, 2.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER("moodygirl/ 7/base freq", fVslider4, 2.2e+02f, 1e+01f, 2e+04f, 0.1f);
+	FAUST_ADDVERTICALSLIDER("moodygirl/ 7/base freq", fVslider4, 2.2e+02f, 1.0f, 2e+04f, 0.1f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 7/freq mult", fVslider3, 1.0f, 0.0f, 2.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER("moodygirl/ 7/freq shift", fVslider2, 2.2e+02f, 1.0f, 2e+04f, 0.1f);
+	FAUST_ADDVERTICALSLIDER("moodygirl/ 7/freq shift", fVslider2, 2.2e+02f, 0.0f, 2e+04f, 0.1f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 7/base dur", fVslider0, 1.0f, 0.0f, 1e+01f, 0.001f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 7/dur div", fVslider1, 1.0f, 0.001f, 2.0f, 0.001f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 7/base amp", fVslider6, 0.1f, 0.0f, 2.0f, 0.001f);
 	FAUST_ADDVERTICALSLIDER("moodygirl/ 7/amp div", fVslider5, 1.0f, 0.01f, 2.0f, 0.001f);
 
 	#define FAUST_LIST_ACTIVES(p) \
-		p(VERTICALSLIDER, base_freq, "moodygirl/ 0/base freq", fVslider53, 2.2e+02f, 1e+01f, 2e+04f, 0.1f) \
+		p(VERTICALSLIDER, base_freq, "moodygirl/ 0/base freq", fVslider53, 2.2e+02f, 1.0f, 2e+04f, 0.1f) \
 		p(VERTICALSLIDER, freq_mult, "moodygirl/ 0/freq mult", fVslider52, 1.0f, 0.0f, 2.0f, 0.001f) \
-		p(VERTICALSLIDER, freq_shift, "moodygirl/ 0/freq shift", fVslider51, 2.2e+02f, 1.0f, 2e+04f, 0.1f) \
+		p(VERTICALSLIDER, freq_shift, "moodygirl/ 0/freq shift", fVslider51, 2.2e+02f, 0.0f, 2e+04f, 0.1f) \
 		p(VERTICALSLIDER, base_dur, "moodygirl/ 0/base dur", fVslider49, 1.0f, 0.0f, 1e+01f, 0.001f) \
 		p(VERTICALSLIDER, dur_div, "moodygirl/ 0/dur div", fVslider50, 1.0f, 0.001f, 2.0f, 0.001f) \
 		p(VERTICALSLIDER, base_amp, "moodygirl/ 0/base amp", fVslider55, 0.1f, 0.0f, 2.0f, 0.001f) \
 		p(VERTICALSLIDER, amp_div, "moodygirl/ 0/amp div", fVslider54, 1.0f, 0.01f, 2.0f, 0.001f) \
-		p(VERTICALSLIDER, base_freq, "moodygirl/ 1/base freq", fVslider46, 2.2e+02f, 1e+01f, 2e+04f, 0.1f) \
+		p(VERTICALSLIDER, base_freq, "moodygirl/ 1/base freq", fVslider46, 2.2e+02f, 1.0f, 2e+04f, 0.1f) \
 		p(VERTICALSLIDER, freq_mult, "moodygirl/ 1/freq mult", fVslider45, 1.0f, 0.0f, 2.0f, 0.001f) \
-		p(VERTICALSLIDER, freq_shift, "moodygirl/ 1/freq shift", fVslider44, 2.2e+02f, 1.0f, 2e+04f, 0.1f) \
+		p(VERTICALSLIDER, freq_shift, "moodygirl/ 1/freq shift", fVslider44, 2.2e+02f, 0.0f, 2e+04f, 0.1f) \
 		p(VERTICALSLIDER, base_dur, "moodygirl/ 1/base dur", fVslider42, 1.0f, 0.0f, 1e+01f, 0.001f) \
 		p(VERTICALSLIDER, dur_div, "moodygirl/ 1/dur div", fVslider43, 1.0f, 0.001f, 2.0f, 0.001f) \
 		p(VERTICALSLIDER, base_amp, "moodygirl/ 1/base amp", fVslider48, 0.1f, 0.0f, 2.0f, 0.001f) \
 		p(VERTICALSLIDER, amp_div, "moodygirl/ 1/amp div", fVslider47, 1.0f, 0.01f, 2.0f, 0.001f) \
-		p(VERTICALSLIDER, base_freq, "moodygirl/ 2/base freq", fVslider39, 2.2e+02f, 1e+01f, 2e+04f, 0.1f) \
+		p(VERTICALSLIDER, base_freq, "moodygirl/ 2/base freq", fVslider39, 2.2e+02f, 1.0f, 2e+04f, 0.1f) \
 		p(VERTICALSLIDER, freq_mult, "moodygirl/ 2/freq mult", fVslider38, 1.0f, 0.0f, 2.0f, 0.001f) \
-		p(VERTICALSLIDER, freq_shift, "moodygirl/ 2/freq shift", fVslider37, 2.2e+02f, 1.0f, 2e+04f, 0.1f) \
+		p(VERTICALSLIDER, freq_shift, "moodygirl/ 2/freq shift", fVslider37, 2.2e+02f, 0.0f, 2e+04f, 0.1f) \
 		p(VERTICALSLIDER, base_dur, "moodygirl/ 2/base dur", fVslider35, 1.0f, 0.0f, 1e+01f, 0.001f) \
 		p(VERTICALSLIDER, dur_div, "moodygirl/ 2/dur div", fVslider36, 1.0f, 0.001f, 2.0f, 0.001f) \
 		p(VERTICALSLIDER, base_amp, "moodygirl/ 2/base amp", fVslider41, 0.1f, 0.0f, 2.0f, 0.001f) \
 		p(VERTICALSLIDER, amp_div, "moodygirl/ 2/amp div", fVslider40, 1.0f, 0.01f, 2.0f, 0.001f) \
-		p(VERTICALSLIDER, base_freq, "moodygirl/ 3/base freq", fVslider32, 2.2e+02f, 1e+01f, 2e+04f, 0.1f) \
+		p(VERTICALSLIDER, base_freq, "moodygirl/ 3/base freq", fVslider32, 2.2e+02f, 1.0f, 2e+04f, 0.1f) \
 		p(VERTICALSLIDER, freq_mult, "moodygirl/ 3/freq mult", fVslider31, 1.0f, 0.0f, 2.0f, 0.001f) \
-		p(VERTICALSLIDER, freq_shift, "moodygirl/ 3/freq shift", fVslider30, 2.2e+02f, 1.0f, 2e+04f, 0.1f) \
+		p(VERTICALSLIDER, freq_shift, "moodygirl/ 3/freq shift", fVslider30, 2.2e+02f, 0.0f, 2e+04f, 0.1f) \
 		p(VERTICALSLIDER, base_dur, "moodygirl/ 3/base dur", fVslider28, 1.0f, 0.0f, 1e+01f, 0.001f) \
 		p(VERTICALSLIDER, dur_div, "moodygirl/ 3/dur div", fVslider29, 1.0f, 0.001f, 2.0f, 0.001f) \
 		p(VERTICALSLIDER, base_amp, "moodygirl/ 3/base amp", fVslider34, 0.1f, 0.0f, 2.0f, 0.001f) \
 		p(VERTICALSLIDER, amp_div, "moodygirl/ 3/amp div", fVslider33, 1.0f, 0.01f, 2.0f, 0.001f) \
-		p(VERTICALSLIDER, base_freq, "moodygirl/ 4/base freq", fVslider25, 2.2e+02f, 1e+01f, 2e+04f, 0.1f) \
+		p(VERTICALSLIDER, base_freq, "moodygirl/ 4/base freq", fVslider25, 2.2e+02f, 1.0f, 2e+04f, 0.1f) \
 		p(VERTICALSLIDER, freq_mult, "moodygirl/ 4/freq mult", fVslider24, 1.0f, 0.0f, 2.0f, 0.001f) \
-		p(VERTICALSLIDER, freq_shift, "moodygirl/ 4/freq shift", fVslider23, 2.2e+02f, 1.0f, 2e+04f, 0.1f) \
+		p(VERTICALSLIDER, freq_shift, "moodygirl/ 4/freq shift", fVslider23, 2.2e+02f, 0.0f, 2e+04f, 0.1f) \
 		p(VERTICALSLIDER, base_dur, "moodygirl/ 4/base dur", fVslider21, 1.0f, 0.0f, 1e+01f, 0.001f) \
 		p(VERTICALSLIDER, dur_div, "moodygirl/ 4/dur div", fVslider22, 1.0f, 0.001f, 2.0f, 0.001f) \
 		p(VERTICALSLIDER, base_amp, "moodygirl/ 4/base amp", fVslider27, 0.1f, 0.0f, 2.0f, 0.001f) \
 		p(VERTICALSLIDER, amp_div, "moodygirl/ 4/amp div", fVslider26, 1.0f, 0.01f, 2.0f, 0.001f) \
-		p(VERTICALSLIDER, base_freq, "moodygirl/ 5/base freq", fVslider18, 2.2e+02f, 1e+01f, 2e+04f, 0.1f) \
+		p(VERTICALSLIDER, base_freq, "moodygirl/ 5/base freq", fVslider18, 2.2e+02f, 1.0f, 2e+04f, 0.1f) \
 		p(VERTICALSLIDER, freq_mult, "moodygirl/ 5/freq mult", fVslider17, 1.0f, 0.0f, 2.0f, 0.001f) \
-		p(VERTICALSLIDER, freq_shift, "moodygirl/ 5/freq shift", fVslider16, 2.2e+02f, 1.0f, 2e+04f, 0.1f) \
+		p(VERTICALSLIDER, freq_shift, "moodygirl/ 5/freq shift", fVslider16, 2.2e+02f, 0.0f, 2e+04f, 0.1f) \
 		p(VERTICALSLIDER, base_dur, "moodygirl/ 5/base dur", fVslider14, 1.0f, 0.0f, 1e+01f, 0.001f) \
 		p(VERTICALSLIDER, dur_div, "moodygirl/ 5/dur div", fVslider15, 1.0f, 0.001f, 2.0f, 0.001f) \
 		p(VERTICALSLIDER, base_amp, "moodygirl/ 5/base amp", fVslider20, 0.1f, 0.0f, 2.0f, 0.001f) \
 		p(VERTICALSLIDER, amp_div, "moodygirl/ 5/amp div", fVslider19, 1.0f, 0.01f, 2.0f, 0.001f) \
-		p(VERTICALSLIDER, base_freq, "moodygirl/ 6/base freq", fVslider11, 2.2e+02f, 1e+01f, 2e+04f, 0.1f) \
+		p(VERTICALSLIDER, base_freq, "moodygirl/ 6/base freq", fVslider11, 2.2e+02f, 1.0f, 2e+04f, 0.1f) \
 		p(VERTICALSLIDER, freq_mult, "moodygirl/ 6/freq mult", fVslider10, 1.0f, 0.0f, 2.0f, 0.001f) \
-		p(VERTICALSLIDER, freq_shift, "moodygirl/ 6/freq shift", fVslider9, 2.2e+02f, 1.0f, 2e+04f, 0.1f) \
+		p(VERTICALSLIDER, freq_shift, "moodygirl/ 6/freq shift", fVslider9, 2.2e+02f, 0.0f, 2e+04f, 0.1f) \
 		p(VERTICALSLIDER, base_dur, "moodygirl/ 6/base dur", fVslider7, 1.0f, 0.0f, 1e+01f, 0.001f) \
 		p(VERTICALSLIDER, dur_div, "moodygirl/ 6/dur div", fVslider8, 1.0f, 0.001f, 2.0f, 0.001f) \
 		p(VERTICALSLIDER, base_amp, "moodygirl/ 6/base amp", fVslider13, 0.1f, 0.0f, 2.0f, 0.001f) \
 		p(VERTICALSLIDER, amp_div, "moodygirl/ 6/amp div", fVslider12, 1.0f, 0.01f, 2.0f, 0.001f) \
-		p(VERTICALSLIDER, base_freq, "moodygirl/ 7/base freq", fVslider4, 2.2e+02f, 1e+01f, 2e+04f, 0.1f) \
+		p(VERTICALSLIDER, base_freq, "moodygirl/ 7/base freq", fVslider4, 2.2e+02f, 1.0f, 2e+04f, 0.1f) \
 		p(VERTICALSLIDER, freq_mult, "moodygirl/ 7/freq mult", fVslider3, 1.0f, 0.0f, 2.0f, 0.001f) \
-		p(VERTICALSLIDER, freq_shift, "moodygirl/ 7/freq shift", fVslider2, 2.2e+02f, 1.0f, 2e+04f, 0.1f) \
+		p(VERTICALSLIDER, freq_shift, "moodygirl/ 7/freq shift", fVslider2, 2.2e+02f, 0.0f, 2e+04f, 0.1f) \
 		p(VERTICALSLIDER, base_dur, "moodygirl/ 7/base dur", fVslider0, 1.0f, 0.0f, 1e+01f, 0.001f) \
 		p(VERTICALSLIDER, dur_div, "moodygirl/ 7/dur div", fVslider1, 1.0f, 0.001f, 2.0f, 0.001f) \
 		p(VERTICALSLIDER, base_amp, "moodygirl/ 7/base amp", fVslider6, 0.1f, 0.0f, 2.0f, 0.001f) \
