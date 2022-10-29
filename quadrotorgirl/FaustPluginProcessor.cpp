@@ -9000,13 +9000,13 @@ struct dsp_voice_group {
     void buildUserInterface(UI* ui_interface)
     {
         if (fVoiceTable.size() > 1) {
-            ui_interface->openTabBox("Polyphonic");
+            //ui_interface->openVerticalBox("Polyphonic");
 
             // Grouped voices UI
-            ui_interface->openVerticalBox("Voices");
-            ui_interface->addButton("Panic", &fPanic);
+            //ui_interface->openVerticalBox("Voices");
+            //ui_interface->addButton("Panic", &fPanic);
             fVoiceGroup->buildUserInterface(ui_interface);
-            ui_interface->closeBox();
+            //ui_interface->closeBox();
 
             // If not grouped, also add individual voices UI
             if (!fGroupControl || dynamic_cast<SoundUIInterface*>(ui_interface)) {
@@ -9019,7 +9019,7 @@ struct dsp_voice_group {
                 }
             }
 
-            ui_interface->closeBox();
+            //ui_interface->closeBox();
         } else {
             fVoiceTable[0]->buildUserInterface(ui_interface);
         }
