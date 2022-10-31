@@ -2,7 +2,7 @@
 author: "amy universe"
 license: "WTFPL"
 name: "quadrotorgirl"
-version: "0.05"
+version: "0.06"
 Code generated with Faust 2.50.6 (https://faust.grame.fr)
 Compilation options: -a /usr/local/share/faust/juce/juce-plugin.cpp -lang cpp -i -scn base_dsp -es 1 -mcd 16 -uim -single -ftz 0
 ------------------------------------------------------------ */
@@ -15008,7 +15008,7 @@ class mydspSIG0 {
   public:
 	
 	int iVec6[2];
-	int iRec26[2];
+	int iRec32[2];
 	
   public:
 	
@@ -15020,21 +15020,21 @@ class mydspSIG0 {
 	}
 	
 	void instanceInitmydspSIG0(int sample_rate) {
-		for (int l31 = 0; l31 < 2; l31 = l31 + 1) {
-			iVec6[l31] = 0;
+		for (int l37 = 0; l37 < 2; l37 = l37 + 1) {
+			iVec6[l37] = 0;
 		}
-		for (int l32 = 0; l32 < 2; l32 = l32 + 1) {
-			iRec26[l32] = 0;
+		for (int l38 = 0; l38 < 2; l38 = l38 + 1) {
+			iRec32[l38] = 0;
 		}
 	}
 	
 	void fillmydspSIG0(int count, float* table) {
 		for (int i1 = 0; i1 < count; i1 = i1 + 1) {
 			iVec6[0] = 1;
-			iRec26[0] = (iVec6[1] + iRec26[1]) % 65536;
-			table[i1] = std::cos(9.58738e-05f * float(iRec26[0]));
+			iRec32[0] = (iVec6[1] + iRec32[1]) % 65536;
+			table[i1] = std::cos(9.58738e-05f * float(iRec32[0]));
 			iVec6[1] = iVec6[0];
-			iRec26[1] = iRec26[0];
+			iRec32[1] = iRec32[0];
 		}
 	}
 
@@ -15048,7 +15048,7 @@ class mydspSIG1 {
   public:
 	
 	int iVec7[2];
-	int iRec29[2];
+	int iRec35[2];
 	
   public:
 	
@@ -15060,21 +15060,21 @@ class mydspSIG1 {
 	}
 	
 	void instanceInitmydspSIG1(int sample_rate) {
-		for (int l35 = 0; l35 < 2; l35 = l35 + 1) {
-			iVec7[l35] = 0;
+		for (int l41 = 0; l41 < 2; l41 = l41 + 1) {
+			iVec7[l41] = 0;
 		}
-		for (int l36 = 0; l36 < 2; l36 = l36 + 1) {
-			iRec29[l36] = 0;
+		for (int l42 = 0; l42 < 2; l42 = l42 + 1) {
+			iRec35[l42] = 0;
 		}
 	}
 	
 	void fillmydspSIG1(int count, float* table) {
 		for (int i2 = 0; i2 < count; i2 = i2 + 1) {
 			iVec7[0] = 1;
-			iRec29[0] = (iVec7[1] + iRec29[1]) % 65536;
-			table[i2] = std::sin(9.58738e-05f * float(iRec29[0]));
+			iRec35[0] = (iVec7[1] + iRec35[1]) % 65536;
+			table[i2] = std::sin(9.58738e-05f * float(iRec35[0]));
 			iVec7[1] = iVec7[0];
-			iRec29[1] = iRec29[0];
+			iRec35[1] = iRec35[0];
 		}
 	}
 
@@ -15090,101 +15090,116 @@ class mydsp : public base_dsp {
 	
  public:
 	
+	int iVec0[2];
+	FAUSTFLOAT fButton0;
+	float fVec1[2];
+	int iRec1[2];
 	FAUSTFLOAT fVslider0;
 	int fSampleRate;
 	float fConst0;
-	int iVec0[2];
-	int iRec2[2];
-	int iRec3[2];
-	float fRec1[2];
+	float fRec2[2];
 	FAUSTFLOAT fVslider1;
 	FAUSTFLOAT fVslider2;
 	FAUSTFLOAT fVslider3;
 	FAUSTFLOAT fVslider4;
-	float fConst1;
+	int iRec5[2];
+	int iRec6[2];
 	float fRec4[2];
 	FAUSTFLOAT fVslider5;
+	float fConst1;
+	float fRec3[2];
 	FAUSTFLOAT fVslider6;
 	FAUSTFLOAT fVslider7;
 	FAUSTFLOAT fVslider8;
-	float fRec5[2];
-	FAUSTFLOAT fButton0;
-	float fVec1[2];
-	float fVec2[2];
-	int iRec0[2];
 	FAUSTFLOAT fVslider9;
-	float fRec6[2];
+	float fConst2;
+	float fRec7[2];
 	FAUSTFLOAT fVslider10;
 	FAUSTFLOAT fVslider11;
 	FAUSTFLOAT fVslider12;
 	FAUSTFLOAT fVslider13;
-	int iRec9[2];
 	float fRec8[2];
+	float fVec2[2];
+	int iRec0[2];
 	FAUSTFLOAT fVslider14;
+	float fRec9[2];
 	FAUSTFLOAT fVslider15;
 	FAUSTFLOAT fVslider16;
 	FAUSTFLOAT fVslider17;
-	float fRec10[2];
 	FAUSTFLOAT fVslider18;
+	int iRec13[2];
+	float fRec12[2];
 	FAUSTFLOAT fVslider19;
+	float fRec11[2];
 	FAUSTFLOAT fVslider20;
 	FAUSTFLOAT fVslider21;
-	float fRec11[2];
-	float fVec3[2];
-	int iRec7[2];
 	FAUSTFLOAT fVslider22;
-	float fRec12[2];
 	FAUSTFLOAT fVslider23;
+	float fRec14[2];
 	FAUSTFLOAT fVslider24;
 	FAUSTFLOAT fVslider25;
 	FAUSTFLOAT fVslider26;
-	int iRec15[2];
-	float fRec14[2];
 	FAUSTFLOAT fVslider27;
+	float fRec15[2];
+	float fVec3[2];
+	int iRec10[2];
 	FAUSTFLOAT fVslider28;
+	float fRec16[2];
 	FAUSTFLOAT fVslider29;
 	FAUSTFLOAT fVslider30;
-	float fRec16[2];
 	FAUSTFLOAT fVslider31;
 	FAUSTFLOAT fVslider32;
+	int iRec20[2];
+	float fRec19[2];
 	FAUSTFLOAT fVslider33;
-	FAUSTFLOAT fVslider34;
-	float fRec17[2];
-	float fVec4[2];
-	int iRec13[2];
-	FAUSTFLOAT fVslider35;
 	float fRec18[2];
+	FAUSTFLOAT fVslider34;
+	FAUSTFLOAT fVslider35;
 	FAUSTFLOAT fVslider36;
 	FAUSTFLOAT fVslider37;
+	float fRec21[2];
 	FAUSTFLOAT fVslider38;
 	FAUSTFLOAT fVslider39;
-	int iRec21[2];
-	float fRec20[2];
 	FAUSTFLOAT fVslider40;
 	FAUSTFLOAT fVslider41;
-	FAUSTFLOAT fVslider42;
-	FAUSTFLOAT fVslider43;
 	float fRec22[2];
+	float fVec4[2];
+	int iRec17[2];
+	FAUSTFLOAT fVslider42;
+	float fRec23[2];
+	FAUSTFLOAT fVslider43;
 	FAUSTFLOAT fVslider44;
 	FAUSTFLOAT fVslider45;
 	FAUSTFLOAT fVslider46;
+	int iRec27[2];
+	float fRec26[2];
 	FAUSTFLOAT fVslider47;
-	float fRec23[2];
-	float fVec5[2];
-	int iRec19[2];
+	float fRec25[2];
 	FAUSTFLOAT fVslider48;
-	float fRec24[2];
 	FAUSTFLOAT fVslider49;
 	FAUSTFLOAT fVslider50;
 	FAUSTFLOAT fVslider51;
-	FAUSTFLOAT fVslider52;
-	FAUSTFLOAT fHslider0;
 	float fRec28[2];
-	FAUSTFLOAT fEntry0;
-	float fRec27[2];
-	float fRec25[2];
-	FAUSTFLOAT fEntry1;
+	FAUSTFLOAT fVslider52;
+	FAUSTFLOAT fVslider53;
+	FAUSTFLOAT fVslider54;
+	FAUSTFLOAT fVslider55;
+	float fRec29[2];
+	float fVec5[2];
+	int iRec24[2];
+	FAUSTFLOAT fVslider56;
 	float fRec30[2];
+	FAUSTFLOAT fVslider57;
+	FAUSTFLOAT fVslider58;
+	FAUSTFLOAT fVslider59;
+	FAUSTFLOAT fVslider60;
+	FAUSTFLOAT fHslider0;
+	float fRec34[2];
+	FAUSTFLOAT fEntry0;
+	float fRec33[2];
+	float fRec31[2];
+	FAUSTFLOAT fEntry1;
+	float fRec36[2];
 	
  public:
 	
@@ -15201,6 +15216,19 @@ class mydsp : public base_dsp {
 		m->declare("envelopes.lib/name", "Faust Envelope Library");
 		m->declare("envelopes.lib/version", "0.2");
 		m->declare("filename", "quadrotorgirl.dsp");
+		m->declare("filters.lib/lowpass0_highpass1", "MIT-style STK-4.3 license");
+		m->declare("filters.lib/lowpass0_highpass1:author", "Julius O. Smith III");
+		m->declare("filters.lib/lowpass:author", "Julius O. Smith III");
+		m->declare("filters.lib/lowpass:copyright", "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>");
+		m->declare("filters.lib/lowpass:license", "MIT-style STK-4.3 license");
+		m->declare("filters.lib/name", "Faust Filters Library");
+		m->declare("filters.lib/tf1:author", "Julius O. Smith III");
+		m->declare("filters.lib/tf1:copyright", "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>");
+		m->declare("filters.lib/tf1:license", "MIT-style STK-4.3 license");
+		m->declare("filters.lib/tf1s:author", "Julius O. Smith III");
+		m->declare("filters.lib/tf1s:copyright", "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>");
+		m->declare("filters.lib/tf1s:license", "MIT-style STK-4.3 license");
+		m->declare("filters.lib/version", "0.3");
 		m->declare("license", "WTFPL");
 		m->declare("maths.lib/author", "GRAME");
 		m->declare("maths.lib/copyright", "GRAME");
@@ -15219,7 +15247,7 @@ class mydsp : public base_dsp {
 		m->declare("platform.lib/version", "0.2");
 		m->declare("signals.lib/name", "Faust Signal Routing Library");
 		m->declare("signals.lib/version", "0.3");
-		m->declare("version", "0.05");
+		m->declare("version", "0.06");
 	}
 
 	virtual int getNumInputs() {
@@ -15243,64 +15271,73 @@ class mydsp : public base_dsp {
 	virtual void instanceConstants(int sample_rate) {
 		fSampleRate = sample_rate;
 		fConst0 = std::min<float>(1.92e+05f, std::max<float>(1.0f, float(fSampleRate)));
-		fConst1 = 1.0f / fConst0;
+		fConst1 = 3.1415927f / fConst0;
+		fConst2 = 1.0f / fConst0;
 	}
 	
 	virtual void instanceResetUserInterface() {
-		fVslider0 = FAUSTFLOAT(2e+04f);
+		fButton0 = FAUSTFLOAT(0.0f);
+		fVslider0 = FAUSTFLOAT(0.0f);
 		fVslider1 = FAUSTFLOAT(0.0f);
 		fVslider2 = FAUSTFLOAT(0.0f);
-		fVslider3 = FAUSTFLOAT(0.0f);
-		fVslider4 = FAUSTFLOAT(0.0f);
-		fVslider5 = FAUSTFLOAT(0.0f);
+		fVslider3 = FAUSTFLOAT(1.0f);
+		fVslider4 = FAUSTFLOAT(2e+04f);
+		fVslider5 = FAUSTFLOAT(2e+04f);
 		fVslider6 = FAUSTFLOAT(0.0f);
 		fVslider7 = FAUSTFLOAT(0.0f);
 		fVslider8 = FAUSTFLOAT(0.0f);
-		fButton0 = FAUSTFLOAT(0.0f);
-		fVslider9 = FAUSTFLOAT(0.01f);
+		fVslider9 = FAUSTFLOAT(0.0f);
 		fVslider10 = FAUSTFLOAT(0.0f);
 		fVslider11 = FAUSTFLOAT(0.0f);
 		fVslider12 = FAUSTFLOAT(0.0f);
-		fVslider13 = FAUSTFLOAT(2e+04f);
-		fVslider14 = FAUSTFLOAT(0.0f);
+		fVslider13 = FAUSTFLOAT(0.0f);
+		fVslider14 = FAUSTFLOAT(0.01f);
 		fVslider15 = FAUSTFLOAT(0.0f);
 		fVslider16 = FAUSTFLOAT(0.0f);
 		fVslider17 = FAUSTFLOAT(0.0f);
-		fVslider18 = FAUSTFLOAT(0.0f);
-		fVslider19 = FAUSTFLOAT(0.0f);
+		fVslider18 = FAUSTFLOAT(2e+04f);
+		fVslider19 = FAUSTFLOAT(2e+04f);
 		fVslider20 = FAUSTFLOAT(0.0f);
 		fVslider21 = FAUSTFLOAT(0.0f);
-		fVslider22 = FAUSTFLOAT(0.01f);
+		fVslider22 = FAUSTFLOAT(0.0f);
 		fVslider23 = FAUSTFLOAT(0.0f);
 		fVslider24 = FAUSTFLOAT(0.0f);
 		fVslider25 = FAUSTFLOAT(0.0f);
-		fVslider26 = FAUSTFLOAT(2e+04f);
+		fVslider26 = FAUSTFLOAT(0.0f);
 		fVslider27 = FAUSTFLOAT(0.0f);
-		fVslider28 = FAUSTFLOAT(0.0f);
+		fVslider28 = FAUSTFLOAT(0.01f);
 		fVslider29 = FAUSTFLOAT(0.0f);
 		fVslider30 = FAUSTFLOAT(0.0f);
 		fVslider31 = FAUSTFLOAT(0.0f);
-		fVslider32 = FAUSTFLOAT(0.0f);
-		fVslider33 = FAUSTFLOAT(0.0f);
+		fVslider32 = FAUSTFLOAT(2e+04f);
+		fVslider33 = FAUSTFLOAT(2e+04f);
 		fVslider34 = FAUSTFLOAT(0.0f);
-		fVslider35 = FAUSTFLOAT(0.01f);
+		fVslider35 = FAUSTFLOAT(0.0f);
 		fVslider36 = FAUSTFLOAT(0.0f);
 		fVslider37 = FAUSTFLOAT(0.0f);
 		fVslider38 = FAUSTFLOAT(0.0f);
-		fVslider39 = FAUSTFLOAT(2e+04f);
+		fVslider39 = FAUSTFLOAT(0.0f);
 		fVslider40 = FAUSTFLOAT(0.0f);
 		fVslider41 = FAUSTFLOAT(0.0f);
-		fVslider42 = FAUSTFLOAT(0.0f);
+		fVslider42 = FAUSTFLOAT(0.01f);
 		fVslider43 = FAUSTFLOAT(0.0f);
 		fVslider44 = FAUSTFLOAT(0.0f);
 		fVslider45 = FAUSTFLOAT(0.0f);
-		fVslider46 = FAUSTFLOAT(0.0f);
-		fVslider47 = FAUSTFLOAT(0.0f);
-		fVslider48 = FAUSTFLOAT(0.01f);
+		fVslider46 = FAUSTFLOAT(2e+04f);
+		fVslider47 = FAUSTFLOAT(2e+04f);
+		fVslider48 = FAUSTFLOAT(0.0f);
 		fVslider49 = FAUSTFLOAT(0.0f);
 		fVslider50 = FAUSTFLOAT(0.0f);
 		fVslider51 = FAUSTFLOAT(0.0f);
 		fVslider52 = FAUSTFLOAT(0.0f);
+		fVslider53 = FAUSTFLOAT(0.0f);
+		fVslider54 = FAUSTFLOAT(0.0f);
+		fVslider55 = FAUSTFLOAT(0.0f);
+		fVslider56 = FAUSTFLOAT(0.01f);
+		fVslider57 = FAUSTFLOAT(0.0f);
+		fVslider58 = FAUSTFLOAT(0.0f);
+		fVslider59 = FAUSTFLOAT(0.0f);
+		fVslider60 = FAUSTFLOAT(0.0f);
 		fHslider0 = FAUSTFLOAT(0.0f);
 		fEntry0 = FAUSTFLOAT(0.0f);
 		fEntry1 = FAUSTFLOAT(0.5f);
@@ -15311,106 +15348,124 @@ class mydsp : public base_dsp {
 			iVec0[l0] = 0;
 		}
 		for (int l1 = 0; l1 < 2; l1 = l1 + 1) {
-			iRec2[l1] = 0;
+			fVec1[l1] = 0.0f;
 		}
 		for (int l2 = 0; l2 < 2; l2 = l2 + 1) {
-			iRec3[l2] = 0;
+			iRec1[l2] = 0;
 		}
 		for (int l3 = 0; l3 < 2; l3 = l3 + 1) {
-			fRec1[l3] = 0.0f;
+			fRec2[l3] = 0.0f;
 		}
 		for (int l4 = 0; l4 < 2; l4 = l4 + 1) {
-			fRec4[l4] = 0.0f;
+			iRec5[l4] = 0;
 		}
 		for (int l5 = 0; l5 < 2; l5 = l5 + 1) {
-			fRec5[l5] = 0.0f;
+			iRec6[l5] = 0;
 		}
 		for (int l6 = 0; l6 < 2; l6 = l6 + 1) {
-			fVec1[l6] = 0.0f;
+			fRec4[l6] = 0.0f;
 		}
 		for (int l7 = 0; l7 < 2; l7 = l7 + 1) {
-			fVec2[l7] = 0.0f;
+			fRec3[l7] = 0.0f;
 		}
 		for (int l8 = 0; l8 < 2; l8 = l8 + 1) {
-			iRec0[l8] = 0;
+			fRec7[l8] = 0.0f;
 		}
 		for (int l9 = 0; l9 < 2; l9 = l9 + 1) {
-			fRec6[l9] = 0.0f;
+			fRec8[l9] = 0.0f;
 		}
 		for (int l10 = 0; l10 < 2; l10 = l10 + 1) {
-			iRec9[l10] = 0;
+			fVec2[l10] = 0.0f;
 		}
 		for (int l11 = 0; l11 < 2; l11 = l11 + 1) {
-			fRec8[l11] = 0.0f;
+			iRec0[l11] = 0;
 		}
 		for (int l12 = 0; l12 < 2; l12 = l12 + 1) {
-			fRec10[l12] = 0.0f;
+			fRec9[l12] = 0.0f;
 		}
 		for (int l13 = 0; l13 < 2; l13 = l13 + 1) {
-			fRec11[l13] = 0.0f;
+			iRec13[l13] = 0;
 		}
 		for (int l14 = 0; l14 < 2; l14 = l14 + 1) {
-			fVec3[l14] = 0.0f;
+			fRec12[l14] = 0.0f;
 		}
 		for (int l15 = 0; l15 < 2; l15 = l15 + 1) {
-			iRec7[l15] = 0;
+			fRec11[l15] = 0.0f;
 		}
 		for (int l16 = 0; l16 < 2; l16 = l16 + 1) {
-			fRec12[l16] = 0.0f;
+			fRec14[l16] = 0.0f;
 		}
 		for (int l17 = 0; l17 < 2; l17 = l17 + 1) {
-			iRec15[l17] = 0;
+			fRec15[l17] = 0.0f;
 		}
 		for (int l18 = 0; l18 < 2; l18 = l18 + 1) {
-			fRec14[l18] = 0.0f;
+			fVec3[l18] = 0.0f;
 		}
 		for (int l19 = 0; l19 < 2; l19 = l19 + 1) {
-			fRec16[l19] = 0.0f;
+			iRec10[l19] = 0;
 		}
 		for (int l20 = 0; l20 < 2; l20 = l20 + 1) {
-			fRec17[l20] = 0.0f;
+			fRec16[l20] = 0.0f;
 		}
 		for (int l21 = 0; l21 < 2; l21 = l21 + 1) {
-			fVec4[l21] = 0.0f;
+			iRec20[l21] = 0;
 		}
 		for (int l22 = 0; l22 < 2; l22 = l22 + 1) {
-			iRec13[l22] = 0;
+			fRec19[l22] = 0.0f;
 		}
 		for (int l23 = 0; l23 < 2; l23 = l23 + 1) {
 			fRec18[l23] = 0.0f;
 		}
 		for (int l24 = 0; l24 < 2; l24 = l24 + 1) {
-			iRec21[l24] = 0;
+			fRec21[l24] = 0.0f;
 		}
 		for (int l25 = 0; l25 < 2; l25 = l25 + 1) {
-			fRec20[l25] = 0.0f;
+			fRec22[l25] = 0.0f;
 		}
 		for (int l26 = 0; l26 < 2; l26 = l26 + 1) {
-			fRec22[l26] = 0.0f;
+			fVec4[l26] = 0.0f;
 		}
 		for (int l27 = 0; l27 < 2; l27 = l27 + 1) {
-			fRec23[l27] = 0.0f;
+			iRec17[l27] = 0;
 		}
 		for (int l28 = 0; l28 < 2; l28 = l28 + 1) {
-			fVec5[l28] = 0.0f;
+			fRec23[l28] = 0.0f;
 		}
 		for (int l29 = 0; l29 < 2; l29 = l29 + 1) {
-			iRec19[l29] = 0;
+			iRec27[l29] = 0;
 		}
 		for (int l30 = 0; l30 < 2; l30 = l30 + 1) {
-			fRec24[l30] = 0.0f;
+			fRec26[l30] = 0.0f;
+		}
+		for (int l31 = 0; l31 < 2; l31 = l31 + 1) {
+			fRec25[l31] = 0.0f;
+		}
+		for (int l32 = 0; l32 < 2; l32 = l32 + 1) {
+			fRec28[l32] = 0.0f;
 		}
 		for (int l33 = 0; l33 < 2; l33 = l33 + 1) {
-			fRec28[l33] = 0.0f;
+			fRec29[l33] = 0.0f;
 		}
 		for (int l34 = 0; l34 < 2; l34 = l34 + 1) {
-			fRec27[l34] = 0.0f;
+			fVec5[l34] = 0.0f;
 		}
-		for (int l37 = 0; l37 < 2; l37 = l37 + 1) {
-			fRec25[l37] = 0.0f;
+		for (int l35 = 0; l35 < 2; l35 = l35 + 1) {
+			iRec24[l35] = 0;
 		}
-		for (int l38 = 0; l38 < 2; l38 = l38 + 1) {
-			fRec30[l38] = 0.0f;
+		for (int l36 = 0; l36 < 2; l36 = l36 + 1) {
+			fRec30[l36] = 0.0f;
+		}
+		for (int l39 = 0; l39 < 2; l39 = l39 + 1) {
+			fRec34[l39] = 0.0f;
+		}
+		for (int l40 = 0; l40 < 2; l40 = l40 + 1) {
+			fRec33[l40] = 0.0f;
+		}
+		for (int l43 = 0; l43 < 2; l43 = l43 + 1) {
+			fRec31[l43] = 0.0f;
+		}
+		for (int l44 = 0; l44 < 2; l44 = l44 + 1) {
+			fRec36[l44] = 0.0f;
 		}
 	}
 	
@@ -15437,202 +15492,240 @@ class mydsp : public base_dsp {
 		ui_interface->openHorizontalBox("0");
 		ui_interface->declare(0, "0", "");
 		ui_interface->openHorizontalBox("g1");
-		ui_interface->declare(&fVslider47, "0", "");
-		ui_interface->declare(&fVslider47, "style", "knob");
-		ui_interface->addVerticalSlider("frq", &fVslider47, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(2e+03f), FAUSTFLOAT(0.1f));
-		ui_interface->declare(&fVslider46, "1", "");
-		ui_interface->declare(&fVslider46, "style", "knob");
-		ui_interface->addVerticalSlider("frq rnd", &fVslider46, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
-		ui_interface->declare(&fVslider45, "2", "");
-		ui_interface->declare(&fVslider45, "style", "knob");
-		ui_interface->addVerticalSlider("pw", &fVslider45, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
-		ui_interface->declare(&fVslider44, "3", "");
-		ui_interface->declare(&fVslider44, "style", "knob");
-		ui_interface->addVerticalSlider("pw rnd", &fVslider44, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
+		ui_interface->declare(&fVslider55, "0", "");
+		ui_interface->declare(&fVslider55, "style", "knob");
+		ui_interface->addVerticalSlider("frq", &fVslider55, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(2e+03f), FAUSTFLOAT(0.1f));
+		ui_interface->declare(&fVslider54, "1", "");
+		ui_interface->declare(&fVslider54, "style", "knob");
+		ui_interface->addVerticalSlider("frq rnd", &fVslider54, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
+		ui_interface->declare(&fVslider53, "2", "");
+		ui_interface->declare(&fVslider53, "style", "knob");
+		ui_interface->addVerticalSlider("pw", &fVslider53, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
+		ui_interface->declare(&fVslider52, "3", "");
+		ui_interface->declare(&fVslider52, "style", "knob");
+		ui_interface->addVerticalSlider("pw rnd", &fVslider52, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
 		ui_interface->closeBox();
 		ui_interface->declare(0, "1", "");
 		ui_interface->openHorizontalBox("g2");
-		ui_interface->declare(&fVslider43, "0", "");
-		ui_interface->declare(&fVslider43, "style", "knob");
-		ui_interface->addVerticalSlider("frq", &fVslider43, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(2e+03f), FAUSTFLOAT(0.1f));
-		ui_interface->declare(&fVslider42, "1", "");
-		ui_interface->declare(&fVslider42, "style", "knob");
-		ui_interface->addVerticalSlider("frq rnd", &fVslider42, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
-		ui_interface->declare(&fVslider41, "2", "");
-		ui_interface->declare(&fVslider41, "style", "knob");
-		ui_interface->addVerticalSlider("pw", &fVslider41, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
-		ui_interface->declare(&fVslider40, "3", "");
-		ui_interface->declare(&fVslider40, "style", "knob");
-		ui_interface->addVerticalSlider("pw rnd", &fVslider40, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
-		ui_interface->closeBox();
-		ui_interface->declare(0, "2", "");
-		ui_interface->openHorizontalBox("env");
-		ui_interface->declare(&fVslider49, "0", "");
-		ui_interface->declare(&fVslider49, "style", "knob");
-		ui_interface->addVerticalSlider("attack", &fVslider49, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(0.01f), FAUSTFLOAT(0.0001f));
+		ui_interface->declare(&fVslider51, "0", "");
+		ui_interface->declare(&fVslider51, "style", "knob");
+		ui_interface->addVerticalSlider("frq", &fVslider51, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(2e+03f), FAUSTFLOAT(0.1f));
 		ui_interface->declare(&fVslider50, "1", "");
 		ui_interface->declare(&fVslider50, "style", "knob");
-		ui_interface->addVerticalSlider("decay", &fVslider50, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(0.01f), FAUSTFLOAT(0.0001f));
-		ui_interface->declare(&fVslider51, "2", "");
-		ui_interface->declare(&fVslider51, "style", "knob");
-		ui_interface->addVerticalSlider("sustain", &fVslider51, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.0001f));
+		ui_interface->addVerticalSlider("frq rnd", &fVslider50, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
+		ui_interface->declare(&fVslider49, "2", "");
+		ui_interface->declare(&fVslider49, "style", "knob");
+		ui_interface->addVerticalSlider("pw", &fVslider49, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
 		ui_interface->declare(&fVslider48, "3", "");
 		ui_interface->declare(&fVslider48, "style", "knob");
-		ui_interface->addVerticalSlider("release", &fVslider48, FAUSTFLOAT(0.01f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.0001f));
+		ui_interface->addVerticalSlider("pw rnd", &fVslider48, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
 		ui_interface->closeBox();
-		ui_interface->declare(&fVslider39, "style", "knob");
-		ui_interface->addVerticalSlider("noise rate", &fVslider39, FAUSTFLOAT(2e+04f), FAUSTFLOAT(1.0f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(1.0f));
+		ui_interface->declare(0, "2", "");
+		ui_interface->openHorizontalBox("grain noise (rnd)");
+		ui_interface->declare(&fVslider47, "style", "knob");
+		ui_interface->addVerticalSlider("filter", &fVslider47, FAUSTFLOAT(2e+04f), FAUSTFLOAT(1.0f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(1.0f));
+		ui_interface->declare(&fVslider46, "style", "knob");
+		ui_interface->addVerticalSlider("rate", &fVslider46, FAUSTFLOAT(2e+04f), FAUSTFLOAT(1.0f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(1.0f));
+		ui_interface->closeBox();
+		ui_interface->declare(0, "3", "");
+		ui_interface->openHorizontalBox("grain env");
+		ui_interface->declare(&fVslider57, "0", "");
+		ui_interface->declare(&fVslider57, "style", "knob");
+		ui_interface->addVerticalSlider("attack", &fVslider57, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(0.01f), FAUSTFLOAT(0.0001f));
+		ui_interface->declare(&fVslider58, "1", "");
+		ui_interface->declare(&fVslider58, "style", "knob");
+		ui_interface->addVerticalSlider("decay", &fVslider58, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(0.01f), FAUSTFLOAT(0.0001f));
+		ui_interface->declare(&fVslider59, "2", "");
+		ui_interface->declare(&fVslider59, "style", "knob");
+		ui_interface->addVerticalSlider("sustain", &fVslider59, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.0001f));
+		ui_interface->declare(&fVslider56, "3", "");
+		ui_interface->declare(&fVslider56, "style", "knob");
+		ui_interface->addVerticalSlider("release", &fVslider56, FAUSTFLOAT(0.01f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.0001f));
+		ui_interface->closeBox();
 		ui_interface->closeBox();
 		ui_interface->openHorizontalBox("1");
 		ui_interface->declare(0, "0", "");
 		ui_interface->openHorizontalBox("g1");
-		ui_interface->declare(&fVslider34, "0", "");
-		ui_interface->declare(&fVslider34, "style", "knob");
-		ui_interface->addVerticalSlider("frq", &fVslider34, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(2e+03f), FAUSTFLOAT(0.1f));
-		ui_interface->declare(&fVslider33, "1", "");
-		ui_interface->declare(&fVslider33, "style", "knob");
-		ui_interface->addVerticalSlider("frq rnd", &fVslider33, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
-		ui_interface->declare(&fVslider32, "2", "");
-		ui_interface->declare(&fVslider32, "style", "knob");
-		ui_interface->addVerticalSlider("pw", &fVslider32, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
-		ui_interface->declare(&fVslider31, "3", "");
-		ui_interface->declare(&fVslider31, "style", "knob");
-		ui_interface->addVerticalSlider("pw rnd", &fVslider31, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
+		ui_interface->declare(&fVslider41, "0", "");
+		ui_interface->declare(&fVslider41, "style", "knob");
+		ui_interface->addVerticalSlider("frq", &fVslider41, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(2e+03f), FAUSTFLOAT(0.1f));
+		ui_interface->declare(&fVslider40, "1", "");
+		ui_interface->declare(&fVslider40, "style", "knob");
+		ui_interface->addVerticalSlider("frq rnd", &fVslider40, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
+		ui_interface->declare(&fVslider39, "2", "");
+		ui_interface->declare(&fVslider39, "style", "knob");
+		ui_interface->addVerticalSlider("pw", &fVslider39, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
+		ui_interface->declare(&fVslider38, "3", "");
+		ui_interface->declare(&fVslider38, "style", "knob");
+		ui_interface->addVerticalSlider("pw rnd", &fVslider38, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
 		ui_interface->closeBox();
 		ui_interface->declare(0, "1", "");
 		ui_interface->openHorizontalBox("g2");
-		ui_interface->declare(&fVslider30, "0", "");
-		ui_interface->declare(&fVslider30, "style", "knob");
-		ui_interface->addVerticalSlider("frq", &fVslider30, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(2e+03f), FAUSTFLOAT(0.1f));
-		ui_interface->declare(&fVslider29, "1", "");
-		ui_interface->declare(&fVslider29, "style", "knob");
-		ui_interface->addVerticalSlider("frq rnd", &fVslider29, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
-		ui_interface->declare(&fVslider28, "2", "");
-		ui_interface->declare(&fVslider28, "style", "knob");
-		ui_interface->addVerticalSlider("pw", &fVslider28, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
-		ui_interface->declare(&fVslider27, "3", "");
-		ui_interface->declare(&fVslider27, "style", "knob");
-		ui_interface->addVerticalSlider("pw rnd", &fVslider27, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
+		ui_interface->declare(&fVslider37, "0", "");
+		ui_interface->declare(&fVslider37, "style", "knob");
+		ui_interface->addVerticalSlider("frq", &fVslider37, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(2e+03f), FAUSTFLOAT(0.1f));
+		ui_interface->declare(&fVslider36, "1", "");
+		ui_interface->declare(&fVslider36, "style", "knob");
+		ui_interface->addVerticalSlider("frq rnd", &fVslider36, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
+		ui_interface->declare(&fVslider35, "2", "");
+		ui_interface->declare(&fVslider35, "style", "knob");
+		ui_interface->addVerticalSlider("pw", &fVslider35, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
+		ui_interface->declare(&fVslider34, "3", "");
+		ui_interface->declare(&fVslider34, "style", "knob");
+		ui_interface->addVerticalSlider("pw rnd", &fVslider34, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
 		ui_interface->closeBox();
 		ui_interface->declare(0, "2", "");
-		ui_interface->openHorizontalBox("env");
-		ui_interface->declare(&fVslider36, "0", "");
-		ui_interface->declare(&fVslider36, "style", "knob");
-		ui_interface->addVerticalSlider("attack", &fVslider36, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(0.01f), FAUSTFLOAT(0.0001f));
-		ui_interface->declare(&fVslider37, "1", "");
-		ui_interface->declare(&fVslider37, "style", "knob");
-		ui_interface->addVerticalSlider("decay", &fVslider37, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(0.01f), FAUSTFLOAT(0.0001f));
-		ui_interface->declare(&fVslider38, "2", "");
-		ui_interface->declare(&fVslider38, "style", "knob");
-		ui_interface->addVerticalSlider("sustain", &fVslider38, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.0001f));
-		ui_interface->declare(&fVslider35, "3", "");
-		ui_interface->declare(&fVslider35, "style", "knob");
-		ui_interface->addVerticalSlider("release", &fVslider35, FAUSTFLOAT(0.01f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.0001f));
+		ui_interface->openHorizontalBox("grain noise (rnd)");
+		ui_interface->declare(&fVslider33, "style", "knob");
+		ui_interface->addVerticalSlider("filter", &fVslider33, FAUSTFLOAT(2e+04f), FAUSTFLOAT(1.0f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(1.0f));
+		ui_interface->declare(&fVslider32, "style", "knob");
+		ui_interface->addVerticalSlider("rate", &fVslider32, FAUSTFLOAT(2e+04f), FAUSTFLOAT(1.0f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(1.0f));
 		ui_interface->closeBox();
-		ui_interface->declare(&fVslider26, "style", "knob");
-		ui_interface->addVerticalSlider("noise rate", &fVslider26, FAUSTFLOAT(2e+04f), FAUSTFLOAT(1.0f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(1.0f));
+		ui_interface->declare(0, "3", "");
+		ui_interface->openHorizontalBox("grain env");
+		ui_interface->declare(&fVslider43, "0", "");
+		ui_interface->declare(&fVslider43, "style", "knob");
+		ui_interface->addVerticalSlider("attack", &fVslider43, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(0.01f), FAUSTFLOAT(0.0001f));
+		ui_interface->declare(&fVslider44, "1", "");
+		ui_interface->declare(&fVslider44, "style", "knob");
+		ui_interface->addVerticalSlider("decay", &fVslider44, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(0.01f), FAUSTFLOAT(0.0001f));
+		ui_interface->declare(&fVslider45, "2", "");
+		ui_interface->declare(&fVslider45, "style", "knob");
+		ui_interface->addVerticalSlider("sustain", &fVslider45, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.0001f));
+		ui_interface->declare(&fVslider42, "3", "");
+		ui_interface->declare(&fVslider42, "style", "knob");
+		ui_interface->addVerticalSlider("release", &fVslider42, FAUSTFLOAT(0.01f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.0001f));
+		ui_interface->closeBox();
 		ui_interface->closeBox();
 		ui_interface->openHorizontalBox("2");
 		ui_interface->declare(0, "0", "");
 		ui_interface->openHorizontalBox("g1");
-		ui_interface->declare(&fVslider21, "0", "");
-		ui_interface->declare(&fVslider21, "style", "knob");
-		ui_interface->addVerticalSlider("frq", &fVslider21, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(2e+03f), FAUSTFLOAT(0.1f));
-		ui_interface->declare(&fVslider20, "1", "");
-		ui_interface->declare(&fVslider20, "style", "knob");
-		ui_interface->addVerticalSlider("frq rnd", &fVslider20, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
-		ui_interface->declare(&fVslider19, "2", "");
-		ui_interface->declare(&fVslider19, "style", "knob");
-		ui_interface->addVerticalSlider("pw", &fVslider19, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
-		ui_interface->declare(&fVslider18, "3", "");
-		ui_interface->declare(&fVslider18, "style", "knob");
-		ui_interface->addVerticalSlider("pw rnd", &fVslider18, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
+		ui_interface->declare(&fVslider27, "0", "");
+		ui_interface->declare(&fVslider27, "style", "knob");
+		ui_interface->addVerticalSlider("frq", &fVslider27, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(2e+03f), FAUSTFLOAT(0.1f));
+		ui_interface->declare(&fVslider26, "1", "");
+		ui_interface->declare(&fVslider26, "style", "knob");
+		ui_interface->addVerticalSlider("frq rnd", &fVslider26, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
+		ui_interface->declare(&fVslider25, "2", "");
+		ui_interface->declare(&fVslider25, "style", "knob");
+		ui_interface->addVerticalSlider("pw", &fVslider25, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
+		ui_interface->declare(&fVslider24, "3", "");
+		ui_interface->declare(&fVslider24, "style", "knob");
+		ui_interface->addVerticalSlider("pw rnd", &fVslider24, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
 		ui_interface->closeBox();
 		ui_interface->declare(0, "1", "");
 		ui_interface->openHorizontalBox("g2");
-		ui_interface->declare(&fVslider17, "0", "");
-		ui_interface->declare(&fVslider17, "style", "knob");
-		ui_interface->addVerticalSlider("frq", &fVslider17, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(2e+03f), FAUSTFLOAT(0.1f));
-		ui_interface->declare(&fVslider16, "1", "");
-		ui_interface->declare(&fVslider16, "style", "knob");
-		ui_interface->addVerticalSlider("frq rnd", &fVslider16, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
-		ui_interface->declare(&fVslider15, "2", "");
-		ui_interface->declare(&fVslider15, "style", "knob");
-		ui_interface->addVerticalSlider("pw", &fVslider15, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
-		ui_interface->declare(&fVslider14, "3", "");
-		ui_interface->declare(&fVslider14, "style", "knob");
-		ui_interface->addVerticalSlider("pw rnd", &fVslider14, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
-		ui_interface->closeBox();
-		ui_interface->declare(0, "2", "");
-		ui_interface->openHorizontalBox("env");
 		ui_interface->declare(&fVslider23, "0", "");
 		ui_interface->declare(&fVslider23, "style", "knob");
-		ui_interface->addVerticalSlider("attack", &fVslider23, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(0.01f), FAUSTFLOAT(0.0001f));
-		ui_interface->declare(&fVslider24, "1", "");
-		ui_interface->declare(&fVslider24, "style", "knob");
-		ui_interface->addVerticalSlider("decay", &fVslider24, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(0.01f), FAUSTFLOAT(0.0001f));
-		ui_interface->declare(&fVslider25, "2", "");
-		ui_interface->declare(&fVslider25, "style", "knob");
-		ui_interface->addVerticalSlider("sustain", &fVslider25, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.0001f));
-		ui_interface->declare(&fVslider22, "3", "");
+		ui_interface->addVerticalSlider("frq", &fVslider23, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(2e+03f), FAUSTFLOAT(0.1f));
+		ui_interface->declare(&fVslider22, "1", "");
 		ui_interface->declare(&fVslider22, "style", "knob");
-		ui_interface->addVerticalSlider("release", &fVslider22, FAUSTFLOAT(0.01f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.0001f));
+		ui_interface->addVerticalSlider("frq rnd", &fVslider22, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
+		ui_interface->declare(&fVslider21, "2", "");
+		ui_interface->declare(&fVslider21, "style", "knob");
+		ui_interface->addVerticalSlider("pw", &fVslider21, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
+		ui_interface->declare(&fVslider20, "3", "");
+		ui_interface->declare(&fVslider20, "style", "knob");
+		ui_interface->addVerticalSlider("pw rnd", &fVslider20, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
 		ui_interface->closeBox();
-		ui_interface->declare(&fVslider13, "style", "knob");
-		ui_interface->addVerticalSlider("noise rate", &fVslider13, FAUSTFLOAT(2e+04f), FAUSTFLOAT(1.0f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(1.0f));
+		ui_interface->declare(0, "2", "");
+		ui_interface->openHorizontalBox("grain noise (rnd)");
+		ui_interface->declare(&fVslider19, "style", "knob");
+		ui_interface->addVerticalSlider("filter", &fVslider19, FAUSTFLOAT(2e+04f), FAUSTFLOAT(1.0f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(1.0f));
+		ui_interface->declare(&fVslider18, "style", "knob");
+		ui_interface->addVerticalSlider("rate", &fVslider18, FAUSTFLOAT(2e+04f), FAUSTFLOAT(1.0f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(1.0f));
+		ui_interface->closeBox();
+		ui_interface->declare(0, "3", "");
+		ui_interface->openHorizontalBox("grain env");
+		ui_interface->declare(&fVslider29, "0", "");
+		ui_interface->declare(&fVslider29, "style", "knob");
+		ui_interface->addVerticalSlider("attack", &fVslider29, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(0.01f), FAUSTFLOAT(0.0001f));
+		ui_interface->declare(&fVslider30, "1", "");
+		ui_interface->declare(&fVslider30, "style", "knob");
+		ui_interface->addVerticalSlider("decay", &fVslider30, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(0.01f), FAUSTFLOAT(0.0001f));
+		ui_interface->declare(&fVslider31, "2", "");
+		ui_interface->declare(&fVslider31, "style", "knob");
+		ui_interface->addVerticalSlider("sustain", &fVslider31, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.0001f));
+		ui_interface->declare(&fVslider28, "3", "");
+		ui_interface->declare(&fVslider28, "style", "knob");
+		ui_interface->addVerticalSlider("release", &fVslider28, FAUSTFLOAT(0.01f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.0001f));
+		ui_interface->closeBox();
 		ui_interface->closeBox();
 		ui_interface->openHorizontalBox("3");
 		ui_interface->declare(0, "0", "");
 		ui_interface->openHorizontalBox("g1");
-		ui_interface->declare(&fVslider8, "0", "");
-		ui_interface->declare(&fVslider8, "style", "knob");
-		ui_interface->addVerticalSlider("frq", &fVslider8, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(2e+03f), FAUSTFLOAT(0.1f));
-		ui_interface->declare(&fVslider7, "1", "");
-		ui_interface->declare(&fVslider7, "style", "knob");
-		ui_interface->addVerticalSlider("frq rnd", &fVslider7, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
-		ui_interface->declare(&fVslider6, "2", "");
-		ui_interface->declare(&fVslider6, "style", "knob");
-		ui_interface->addVerticalSlider("pw", &fVslider6, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
-		ui_interface->declare(&fVslider5, "3", "");
-		ui_interface->declare(&fVslider5, "style", "knob");
-		ui_interface->addVerticalSlider("pw rnd", &fVslider5, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
+		ui_interface->declare(&fVslider13, "0", "");
+		ui_interface->declare(&fVslider13, "style", "knob");
+		ui_interface->addVerticalSlider("frq", &fVslider13, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(2e+03f), FAUSTFLOAT(0.1f));
+		ui_interface->declare(&fVslider12, "1", "");
+		ui_interface->declare(&fVslider12, "style", "knob");
+		ui_interface->addVerticalSlider("frq rnd", &fVslider12, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
+		ui_interface->declare(&fVslider11, "2", "");
+		ui_interface->declare(&fVslider11, "style", "knob");
+		ui_interface->addVerticalSlider("pw", &fVslider11, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
+		ui_interface->declare(&fVslider10, "3", "");
+		ui_interface->declare(&fVslider10, "style", "knob");
+		ui_interface->addVerticalSlider("pw rnd", &fVslider10, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
 		ui_interface->closeBox();
 		ui_interface->declare(0, "1", "");
 		ui_interface->openHorizontalBox("g2");
-		ui_interface->declare(&fVslider4, "0", "");
-		ui_interface->declare(&fVslider4, "style", "knob");
-		ui_interface->addVerticalSlider("frq", &fVslider4, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(2e+03f), FAUSTFLOAT(0.1f));
-		ui_interface->declare(&fVslider3, "1", "");
-		ui_interface->declare(&fVslider3, "style", "knob");
-		ui_interface->addVerticalSlider("frq rnd", &fVslider3, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
-		ui_interface->declare(&fVslider2, "2", "");
-		ui_interface->declare(&fVslider2, "style", "knob");
-		ui_interface->addVerticalSlider("pw", &fVslider2, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
-		ui_interface->declare(&fVslider1, "3", "");
-		ui_interface->declare(&fVslider1, "style", "knob");
-		ui_interface->addVerticalSlider("pw rnd", &fVslider1, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
+		ui_interface->declare(&fVslider9, "0", "");
+		ui_interface->declare(&fVslider9, "style", "knob");
+		ui_interface->addVerticalSlider("frq", &fVslider9, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(2e+03f), FAUSTFLOAT(0.1f));
+		ui_interface->declare(&fVslider8, "1", "");
+		ui_interface->declare(&fVslider8, "style", "knob");
+		ui_interface->addVerticalSlider("frq rnd", &fVslider8, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
+		ui_interface->declare(&fVslider7, "2", "");
+		ui_interface->declare(&fVslider7, "style", "knob");
+		ui_interface->addVerticalSlider("pw", &fVslider7, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
+		ui_interface->declare(&fVslider6, "3", "");
+		ui_interface->declare(&fVslider6, "style", "knob");
+		ui_interface->addVerticalSlider("pw rnd", &fVslider6, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
 		ui_interface->closeBox();
 		ui_interface->declare(0, "2", "");
+		ui_interface->openHorizontalBox("grain noise (rnd)");
+		ui_interface->declare(&fVslider5, "style", "knob");
+		ui_interface->addVerticalSlider("filter", &fVslider5, FAUSTFLOAT(2e+04f), FAUSTFLOAT(1.0f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(1.0f));
+		ui_interface->declare(&fVslider4, "style", "knob");
+		ui_interface->addVerticalSlider("rate", &fVslider4, FAUSTFLOAT(2e+04f), FAUSTFLOAT(1.0f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(1.0f));
+		ui_interface->closeBox();
+		ui_interface->declare(0, "3", "");
+		ui_interface->openHorizontalBox("grain env");
+		ui_interface->declare(&fVslider15, "0", "");
+		ui_interface->declare(&fVslider15, "style", "knob");
+		ui_interface->addVerticalSlider("attack", &fVslider15, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(0.01f), FAUSTFLOAT(0.0001f));
+		ui_interface->declare(&fVslider16, "1", "");
+		ui_interface->declare(&fVslider16, "style", "knob");
+		ui_interface->addVerticalSlider("decay", &fVslider16, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(0.01f), FAUSTFLOAT(0.0001f));
+		ui_interface->declare(&fVslider17, "2", "");
+		ui_interface->declare(&fVslider17, "style", "knob");
+		ui_interface->addVerticalSlider("sustain", &fVslider17, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.0001f));
+		ui_interface->declare(&fVslider14, "3", "");
+		ui_interface->declare(&fVslider14, "style", "knob");
+		ui_interface->addVerticalSlider("release", &fVslider14, FAUSTFLOAT(0.01f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.0001f));
+		ui_interface->closeBox();
+		ui_interface->closeBox();
+		ui_interface->openHorizontalBox("global");
+		ui_interface->declare(&fVslider60, "0", "");
+		ui_interface->declare(&fVslider60, "style", "knob");
+		ui_interface->addVerticalSlider("feedback", &fVslider60, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
+		ui_interface->declare(0, "1", "");
 		ui_interface->openHorizontalBox("env");
-		ui_interface->declare(&fVslider10, "0", "");
-		ui_interface->declare(&fVslider10, "style", "knob");
-		ui_interface->addVerticalSlider("attack", &fVslider10, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(0.01f), FAUSTFLOAT(0.0001f));
-		ui_interface->declare(&fVslider11, "1", "");
-		ui_interface->declare(&fVslider11, "style", "knob");
-		ui_interface->addVerticalSlider("decay", &fVslider11, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(0.01f), FAUSTFLOAT(0.0001f));
-		ui_interface->declare(&fVslider12, "2", "");
-		ui_interface->declare(&fVslider12, "style", "knob");
-		ui_interface->addVerticalSlider("sustain", &fVslider12, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.0001f));
-		ui_interface->declare(&fVslider9, "3", "");
-		ui_interface->declare(&fVslider9, "style", "knob");
-		ui_interface->addVerticalSlider("release", &fVslider9, FAUSTFLOAT(0.01f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.0001f));
-		ui_interface->closeBox();
+		ui_interface->declare(&fVslider1, "0", "");
+		ui_interface->declare(&fVslider1, "style", "knob");
+		ui_interface->addVerticalSlider("attack", &fVslider1, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(4.0f), FAUSTFLOAT(0.0001f));
+		ui_interface->declare(&fVslider2, "1", "");
+		ui_interface->declare(&fVslider2, "style", "knob");
+		ui_interface->addVerticalSlider("decay", &fVslider2, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(4.0f), FAUSTFLOAT(0.0001f));
+		ui_interface->declare(&fVslider3, "2", "");
+		ui_interface->declare(&fVslider3, "style", "knob");
+		ui_interface->addVerticalSlider("sustain", &fVslider3, FAUSTFLOAT(1.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.0001f));
+		ui_interface->declare(&fVslider0, "3", "");
 		ui_interface->declare(&fVslider0, "style", "knob");
-		ui_interface->addVerticalSlider("noise rate", &fVslider0, FAUSTFLOAT(2e+04f), FAUSTFLOAT(1.0f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(1.0f));
+		ui_interface->addVerticalSlider("release", &fVslider0, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(4.0f), FAUSTFLOAT(0.0001f));
 		ui_interface->closeBox();
-		ui_interface->declare(&fVslider52, "style", "knob");
-		ui_interface->addVerticalSlider("feedback", &fVslider52, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
-		ui_interface->openHorizontalBox("hidden (yeah! don't look here!)");
+		ui_interface->closeBox();
+		ui_interface->openHorizontalBox("hidden (nothing to see here!)");
 		ui_interface->declare(&fHslider0, "midi", "pitchwheel");
 		ui_interface->addHorizontalSlider("bend", &fHslider0, FAUSTFLOAT(0.0f), FAUSTFLOAT(-2.0f), FAUSTFLOAT(2.0f), FAUSTFLOAT(0.01f));
 		ui_interface->addNumEntry("freq", &fEntry0, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(2e+04f), FAUSTFLOAT(1.0f));
@@ -15647,166 +15740,196 @@ class mydsp : public base_dsp {
 		FAUSTFLOAT* input1 = inputs[1];
 		FAUSTFLOAT* output0 = outputs[0];
 		FAUSTFLOAT* output1 = outputs[1];
-		int iSlow0 = int(fConst0 / float(fVslider0));
-		float fSlow1 = float(fVslider1);
-		float fSlow2 = float(fVslider2);
-		float fSlow3 = 1e+03f * float(fVslider3);
-		float fSlow4 = float(fVslider4);
-		float fSlow5 = float(fVslider5);
-		float fSlow6 = float(fVslider6);
-		float fSlow7 = 1e+03f * float(fVslider7);
-		float fSlow8 = float(fVslider8);
-		float fSlow9 = float(fButton0);
-		float fSlow10 = 1.0f / std::max<float>(1.0f, fConst0 * float(fVslider9));
-		float fSlow11 = std::max<float>(1.0f, fConst0 * float(fVslider10));
-		float fSlow12 = 1.0f / fSlow11;
-		float fSlow13 = float(fVslider12);
-		float fSlow14 = (1.0f - fSlow13) / std::max<float>(1.0f, fConst0 * float(fVslider11));
-		int iSlow15 = int(fConst0 / float(fVslider13));
-		float fSlow16 = float(fVslider14);
-		float fSlow17 = float(fVslider15);
-		float fSlow18 = 1e+03f * float(fVslider16);
-		float fSlow19 = float(fVslider17);
-		float fSlow20 = float(fVslider18);
-		float fSlow21 = float(fVslider19);
-		float fSlow22 = 1e+03f * float(fVslider20);
-		float fSlow23 = float(fVslider21);
-		float fSlow24 = 1.0f / std::max<float>(1.0f, fConst0 * float(fVslider22));
-		float fSlow25 = std::max<float>(1.0f, fConst0 * float(fVslider23));
-		float fSlow26 = 1.0f / fSlow25;
-		float fSlow27 = float(fVslider25);
-		float fSlow28 = (1.0f - fSlow27) / std::max<float>(1.0f, fConst0 * float(fVslider24));
-		int iSlow29 = int(fConst0 / float(fVslider26));
-		float fSlow30 = float(fVslider27);
-		float fSlow31 = float(fVslider28);
-		float fSlow32 = 1e+03f * float(fVslider29);
-		float fSlow33 = float(fVslider30);
-		float fSlow34 = float(fVslider31);
-		float fSlow35 = float(fVslider32);
-		float fSlow36 = 1e+03f * float(fVslider33);
-		float fSlow37 = float(fVslider34);
-		float fSlow38 = 1.0f / std::max<float>(1.0f, fConst0 * float(fVslider35));
-		float fSlow39 = std::max<float>(1.0f, fConst0 * float(fVslider36));
-		float fSlow40 = 1.0f / fSlow39;
-		float fSlow41 = float(fVslider38);
-		float fSlow42 = (1.0f - fSlow41) / std::max<float>(1.0f, fConst0 * float(fVslider37));
-		int iSlow43 = int(fConst0 / float(fVslider39));
-		float fSlow44 = float(fVslider40);
-		float fSlow45 = float(fVslider41);
-		float fSlow46 = 1e+03f * float(fVslider42);
-		float fSlow47 = float(fVslider43);
-		float fSlow48 = float(fVslider44);
-		float fSlow49 = float(fVslider45);
-		float fSlow50 = 1e+03f * float(fVslider46);
-		float fSlow51 = float(fVslider47);
-		float fSlow52 = 1.0f / std::max<float>(1.0f, fConst0 * float(fVslider48));
-		float fSlow53 = std::max<float>(1.0f, fConst0 * float(fVslider49));
-		float fSlow54 = 1.0f / fSlow53;
-		float fSlow55 = float(fVslider51);
-		float fSlow56 = (1.0f - fSlow55) / std::max<float>(1.0f, fConst0 * float(fVslider50));
-		float fSlow57 = float(fVslider52);
-		int iSlow58 = fSlow9 == 0.0f;
-		float fSlow59 = std::pow(2.0f, 0.083333336f * float(fHslider0));
-		float fSlow60 = fConst1 * float(fEntry0);
-		float fSlow61 = 0.25f * float(fEntry1);
+		float fSlow0 = float(fButton0);
+		int iSlow1 = fSlow0 == 0.0f;
+		float fSlow2 = 1.0f / std::max<float>(1.0f, fConst0 * float(fVslider0));
+		float fSlow3 = std::max<float>(1.0f, fConst0 * float(fVslider1));
+		float fSlow4 = 1.0f / fSlow3;
+		float fSlow5 = float(fVslider3);
+		float fSlow6 = (1.0f - fSlow5) / std::max<float>(1.0f, fConst0 * float(fVslider2));
+		int iSlow7 = int(fConst0 / float(fVslider4));
+		float fSlow8 = 1.0f / std::tan(fConst1 * float(fVslider5));
+		float fSlow9 = 1.0f - fSlow8;
+		float fSlow10 = 1.0f / (fSlow8 + 1.0f);
+		float fSlow11 = float(fVslider6);
+		float fSlow12 = float(fVslider7);
+		float fSlow13 = 1e+03f * float(fVslider8);
+		float fSlow14 = float(fVslider9);
+		float fSlow15 = float(fVslider10);
+		float fSlow16 = float(fVslider11);
+		float fSlow17 = 1e+03f * float(fVslider12);
+		float fSlow18 = float(fVslider13);
+		float fSlow19 = 1.0f / std::max<float>(1.0f, fConst0 * float(fVslider14));
+		float fSlow20 = std::max<float>(1.0f, fConst0 * float(fVslider15));
+		float fSlow21 = 1.0f / fSlow20;
+		float fSlow22 = float(fVslider17);
+		float fSlow23 = (1.0f - fSlow22) / std::max<float>(1.0f, fConst0 * float(fVslider16));
+		int iSlow24 = int(fConst0 / float(fVslider18));
+		float fSlow25 = 1.0f / std::tan(fConst1 * float(fVslider19));
+		float fSlow26 = 1.0f - fSlow25;
+		float fSlow27 = 1.0f / (fSlow25 + 1.0f);
+		float fSlow28 = float(fVslider20);
+		float fSlow29 = float(fVslider21);
+		float fSlow30 = 1e+03f * float(fVslider22);
+		float fSlow31 = float(fVslider23);
+		float fSlow32 = float(fVslider24);
+		float fSlow33 = float(fVslider25);
+		float fSlow34 = 1e+03f * float(fVslider26);
+		float fSlow35 = float(fVslider27);
+		float fSlow36 = 1.0f / std::max<float>(1.0f, fConst0 * float(fVslider28));
+		float fSlow37 = std::max<float>(1.0f, fConst0 * float(fVslider29));
+		float fSlow38 = 1.0f / fSlow37;
+		float fSlow39 = float(fVslider31);
+		float fSlow40 = (1.0f - fSlow39) / std::max<float>(1.0f, fConst0 * float(fVslider30));
+		int iSlow41 = int(fConst0 / float(fVslider32));
+		float fSlow42 = 1.0f / std::tan(fConst1 * float(fVslider33));
+		float fSlow43 = 1.0f - fSlow42;
+		float fSlow44 = 1.0f / (fSlow42 + 1.0f);
+		float fSlow45 = float(fVslider34);
+		float fSlow46 = float(fVslider35);
+		float fSlow47 = 1e+03f * float(fVslider36);
+		float fSlow48 = float(fVslider37);
+		float fSlow49 = float(fVslider38);
+		float fSlow50 = float(fVslider39);
+		float fSlow51 = 1e+03f * float(fVslider40);
+		float fSlow52 = float(fVslider41);
+		float fSlow53 = 1.0f / std::max<float>(1.0f, fConst0 * float(fVslider42));
+		float fSlow54 = std::max<float>(1.0f, fConst0 * float(fVslider43));
+		float fSlow55 = 1.0f / fSlow54;
+		float fSlow56 = float(fVslider45);
+		float fSlow57 = (1.0f - fSlow56) / std::max<float>(1.0f, fConst0 * float(fVslider44));
+		int iSlow58 = int(fConst0 / float(fVslider46));
+		float fSlow59 = 1.0f / std::tan(fConst1 * float(fVslider47));
+		float fSlow60 = 1.0f - fSlow59;
+		float fSlow61 = 1.0f / (fSlow59 + 1.0f);
+		float fSlow62 = float(fVslider48);
+		float fSlow63 = float(fVslider49);
+		float fSlow64 = 1e+03f * float(fVslider50);
+		float fSlow65 = float(fVslider51);
+		float fSlow66 = float(fVslider52);
+		float fSlow67 = float(fVslider53);
+		float fSlow68 = 1e+03f * float(fVslider54);
+		float fSlow69 = float(fVslider55);
+		float fSlow70 = 1.0f / std::max<float>(1.0f, fConst0 * float(fVslider56));
+		float fSlow71 = std::max<float>(1.0f, fConst0 * float(fVslider57));
+		float fSlow72 = 1.0f / fSlow71;
+		float fSlow73 = float(fVslider59);
+		float fSlow74 = (1.0f - fSlow73) / std::max<float>(1.0f, fConst0 * float(fVslider58));
+		float fSlow75 = float(fVslider60);
+		float fSlow76 = std::pow(2.0f, 0.083333336f * float(fHslider0));
+		float fSlow77 = fConst2 * float(fEntry0);
+		float fSlow78 = 0.25f * float(fEntry1);
 		for (int i0 = 0; i0 < count; i0 = i0 + 1) {
 			iVec0[0] = 1;
-			iRec2[0] = (iVec0[1] + iRec2[1]) % iSlow0;
-			iRec3[0] = 1103515245 * iRec3[1] + 12345;
-			float fTemp0 = 4.656613e-10f * float(iRec3[0]);
-			fRec1[0] = ((iRec2[0] <= iRec2[1]) ? fTemp0 : fRec1[1]);
-			float fTemp1 = std::fabs(fRec1[0]);
-			float fTemp2 = fRec4[1] + fConst1 * (fSlow4 + fSlow3 * fRec1[0]);
-			fRec4[0] = fTemp2 - std::floor(fTemp2);
-			float fTemp3 = fRec5[1] + fConst1 * (fSlow8 + fSlow7 * fRec1[0]);
-			fRec5[0] = fTemp3 - std::floor(fTemp3);
-			fVec1[0] = fSlow9;
-			float fTemp4 = fSlow9 * float(fRec5[0] <= (fSlow6 + fSlow5 * fTemp1)) * float(fRec4[0] <= (fSlow2 + fSlow1 * fTemp1));
-			fVec2[0] = fTemp4;
-			iRec0[0] = (iRec0[1] + 1) * (fTemp4 == 0.0f);
-			fRec6[0] = fTemp4 + fRec6[1] * float(fVec2[1] >= fTemp4);
-			iRec9[0] = (iVec0[1] + iRec9[1]) % iSlow15;
-			fRec8[0] = ((iRec9[0] <= iRec9[1]) ? fTemp0 : fRec8[1]);
-			float fTemp5 = std::fabs(fRec8[0]);
-			float fTemp6 = fRec10[1] + fConst1 * (fSlow19 + fSlow18 * fRec8[0]);
-			fRec10[0] = fTemp6 - std::floor(fTemp6);
-			float fTemp7 = fRec11[1] + fConst1 * (fSlow23 + fSlow22 * fRec8[0]);
-			fRec11[0] = fTemp7 - std::floor(fTemp7);
-			float fTemp8 = fSlow9 * float(fRec11[0] <= (fSlow21 + fSlow20 * fTemp5)) * float(fRec10[0] <= (fSlow17 + fSlow16 * fTemp5));
-			fVec3[0] = fTemp8;
-			iRec7[0] = (iRec7[1] + 1) * (fTemp8 == 0.0f);
-			fRec12[0] = fTemp8 + fRec12[1] * float(fVec3[1] >= fTemp8);
-			iRec15[0] = (iVec0[1] + iRec15[1]) % iSlow29;
-			fRec14[0] = ((iRec15[0] <= iRec15[1]) ? fTemp0 : fRec14[1]);
-			float fTemp9 = std::fabs(fRec14[0]);
-			float fTemp10 = fRec16[1] + fConst1 * (fSlow33 + fSlow32 * fRec14[0]);
-			fRec16[0] = fTemp10 - std::floor(fTemp10);
-			float fTemp11 = fRec17[1] + fConst1 * (fSlow37 + fSlow36 * fRec14[0]);
-			fRec17[0] = fTemp11 - std::floor(fTemp11);
-			float fTemp12 = fSlow9 * float(fRec17[0] <= (fSlow35 + fSlow34 * fTemp9)) * float(fRec16[0] <= (fSlow31 + fSlow30 * fTemp9));
-			fVec4[0] = fTemp12;
-			iRec13[0] = (iRec13[1] + 1) * (fTemp12 == 0.0f);
-			fRec18[0] = fTemp12 + fRec18[1] * float(fVec4[1] >= fTemp12);
-			iRec21[0] = (iVec0[1] + iRec21[1]) % iSlow43;
-			fRec20[0] = ((iRec21[0] <= iRec21[1]) ? fTemp0 : fRec20[1]);
-			float fTemp13 = std::fabs(fRec20[0]);
-			float fTemp14 = fRec22[1] + fConst1 * (fSlow47 + fSlow46 * fRec20[0]);
-			fRec22[0] = fTemp14 - std::floor(fTemp14);
-			float fTemp15 = fRec23[1] + fConst1 * (fSlow51 + fSlow50 * fRec20[0]);
-			fRec23[0] = fTemp15 - std::floor(fTemp15);
-			float fTemp16 = fSlow9 * float(fRec23[0] <= (fSlow49 + fSlow48 * fTemp13)) * float(fRec22[0] <= (fSlow45 + fSlow44 * fTemp13));
-			fVec5[0] = fTemp16;
-			iRec19[0] = (iRec19[1] + 1) * (fTemp16 == 0.0f);
-			fRec24[0] = fTemp16 + fRec24[1] * float(fVec5[1] >= fTemp16);
-			float fTemp17 = std::max<float>(0.0f, std::min<float>(fSlow54 * fRec24[0], std::max<float>(fSlow56 * (fSlow53 - fRec24[0]) + 1.0f, fSlow55)) * (1.0f - fSlow52 * float(iRec19[0]))) + std::max<float>(0.0f, std::min<float>(fSlow40 * fRec18[0], std::max<float>(fSlow42 * (fSlow39 - fRec18[0]) + 1.0f, fSlow41)) * (1.0f - fSlow38 * float(iRec13[0]))) + std::max<float>(0.0f, std::min<float>(fSlow26 * fRec12[0], std::max<float>(fSlow28 * (fSlow25 - fRec12[0]) + 1.0f, fSlow27)) * (1.0f - fSlow24 * float(iRec7[0]))) + std::max<float>(0.0f, std::min<float>(fSlow12 * fRec6[0], std::max<float>(fSlow14 * (fSlow11 - fRec6[0]) + 1.0f, fSlow13)) * (1.0f - fSlow10 * float(iRec0[0])));
-			float fTemp18 = float(input0[i0]) + fSlow57 * fRec25[1];
-			float fTemp19 = float((fSlow9 == fVec1[1]) | iSlow58);
-			fRec28[0] = fSlow59 * (1.0f - 0.999f * fTemp19) + 0.999f * fTemp19 * fRec28[1];
-			float fTemp20 = fRec27[1] + fSlow60 * fRec28[0];
-			fRec27[0] = fTemp20 - std::floor(fTemp20);
-			int iTemp21 = int(65536.0f * fRec27[0]);
-			float fTemp22 = ftbl0mydspSIG0[iTemp21];
-			float fTemp23 = ftbl1mydspSIG1[iTemp21];
-			fRec25[0] = fTemp23 * std::cos(fTemp18) + fTemp22 * std::sin(fTemp18);
-			output0[i0] = FAUSTFLOAT(fSlow61 * fRec25[0] * fTemp17);
-			float fTemp24 = float(input1[i0]) + fSlow57 * fRec30[1];
-			fRec30[0] = fTemp23 * std::cos(fTemp24) + fTemp22 * std::sin(fTemp24);
-			output1[i0] = FAUSTFLOAT(fSlow61 * fRec30[0] * fTemp17);
+			fVec1[0] = fSlow0;
+			iRec1[0] = iSlow1 * (iRec1[1] + 1);
+			fRec2[0] = fSlow0 + fRec2[1] * float(fVec1[1] >= fSlow0);
+			float fTemp0 = std::max<float>(0.0f, std::min<float>(fSlow4 * fRec2[0], std::max<float>(fSlow6 * (fSlow3 - fRec2[0]) + 1.0f, fSlow5)) * (1.0f - fSlow2 * float(iRec1[0])));
+			iRec5[0] = (iVec0[1] + iRec5[1]) % iSlow7;
+			iRec6[0] = 1103515245 * iRec6[1] + 12345;
+			float fTemp1 = 4.656613e-10f * float(iRec6[0]);
+			fRec4[0] = ((iRec5[0] <= iRec5[1]) ? fTemp1 : fRec4[1]);
+			fRec3[0] = 0.0f - fSlow10 * (fSlow9 * fRec3[1] - (fRec4[0] + fRec4[1]));
+			float fTemp2 = std::fabs(fRec3[0]);
+			float fTemp3 = fRec7[1] + fConst2 * (fSlow14 + fSlow13 * fRec3[0]);
+			fRec7[0] = fTemp3 - std::floor(fTemp3);
+			float fTemp4 = fRec8[1] + fConst2 * (fSlow18 + fSlow17 * fRec3[0]);
+			fRec8[0] = fTemp4 - std::floor(fTemp4);
+			float fTemp5 = float(fRec8[0] <= (fSlow16 + fSlow15 * fTemp2)) * float(fRec7[0] <= (fSlow12 + fSlow11 * fTemp2)) * fTemp0;
+			fVec2[0] = fTemp5;
+			iRec0[0] = (iRec0[1] + 1) * (fTemp5 == 0.0f);
+			fRec9[0] = fTemp5 + fRec9[1] * float(fVec2[1] >= fTemp5);
+			iRec13[0] = (iVec0[1] + iRec13[1]) % iSlow24;
+			fRec12[0] = ((iRec13[0] <= iRec13[1]) ? fTemp1 : fRec12[1]);
+			fRec11[0] = 0.0f - fSlow27 * (fSlow26 * fRec11[1] - (fRec12[0] + fRec12[1]));
+			float fTemp6 = std::fabs(fRec11[0]);
+			float fTemp7 = fRec14[1] + fConst2 * (fSlow31 + fSlow30 * fRec11[0]);
+			fRec14[0] = fTemp7 - std::floor(fTemp7);
+			float fTemp8 = fRec15[1] + fConst2 * (fSlow35 + fSlow34 * fRec11[0]);
+			fRec15[0] = fTemp8 - std::floor(fTemp8);
+			float fTemp9 = float(fRec15[0] <= (fSlow33 + fSlow32 * fTemp6)) * float(fRec14[0] <= (fSlow29 + fSlow28 * fTemp6)) * fTemp0;
+			fVec3[0] = fTemp9;
+			iRec10[0] = (iRec10[1] + 1) * (fTemp9 == 0.0f);
+			fRec16[0] = fTemp9 + fRec16[1] * float(fVec3[1] >= fTemp9);
+			iRec20[0] = (iVec0[1] + iRec20[1]) % iSlow41;
+			fRec19[0] = ((iRec20[0] <= iRec20[1]) ? fTemp1 : fRec19[1]);
+			fRec18[0] = 0.0f - fSlow44 * (fSlow43 * fRec18[1] - (fRec19[0] + fRec19[1]));
+			float fTemp10 = std::fabs(fRec18[0]);
+			float fTemp11 = fRec21[1] + fConst2 * (fSlow48 + fSlow47 * fRec18[0]);
+			fRec21[0] = fTemp11 - std::floor(fTemp11);
+			float fTemp12 = fRec22[1] + fConst2 * (fSlow52 + fSlow51 * fRec18[0]);
+			fRec22[0] = fTemp12 - std::floor(fTemp12);
+			float fTemp13 = float(fRec22[0] <= (fSlow50 + fSlow49 * fTemp10)) * float(fRec21[0] <= (fSlow46 + fSlow45 * fTemp10)) * fTemp0;
+			fVec4[0] = fTemp13;
+			iRec17[0] = (iRec17[1] + 1) * (fTemp13 == 0.0f);
+			fRec23[0] = fTemp13 + fRec23[1] * float(fVec4[1] >= fTemp13);
+			iRec27[0] = (iVec0[1] + iRec27[1]) % iSlow58;
+			fRec26[0] = ((iRec27[0] <= iRec27[1]) ? fTemp1 : fRec26[1]);
+			fRec25[0] = 0.0f - fSlow61 * (fSlow60 * fRec25[1] - (fRec26[0] + fRec26[1]));
+			float fTemp14 = std::fabs(fRec25[0]);
+			float fTemp15 = fRec28[1] + fConst2 * (fSlow65 + fSlow64 * fRec25[0]);
+			fRec28[0] = fTemp15 - std::floor(fTemp15);
+			float fTemp16 = fRec29[1] + fConst2 * (fSlow69 + fSlow68 * fRec25[0]);
+			fRec29[0] = fTemp16 - std::floor(fTemp16);
+			float fTemp17 = float(fRec29[0] <= (fSlow67 + fSlow66 * fTemp14)) * float(fRec28[0] <= (fSlow63 + fSlow62 * fTemp14)) * fTemp0;
+			fVec5[0] = fTemp17;
+			iRec24[0] = (iRec24[1] + 1) * (fTemp17 == 0.0f);
+			fRec30[0] = fTemp17 + fRec30[1] * float(fVec5[1] >= fTemp17);
+			float fTemp18 = std::max<float>(0.0f, std::min<float>(fSlow72 * fRec30[0], std::max<float>(fSlow74 * (fSlow71 - fRec30[0]) + 1.0f, fSlow73)) * (1.0f - fSlow70 * float(iRec24[0]))) + std::max<float>(0.0f, std::min<float>(fSlow55 * fRec23[0], std::max<float>(fSlow57 * (fSlow54 - fRec23[0]) + 1.0f, fSlow56)) * (1.0f - fSlow53 * float(iRec17[0]))) + std::max<float>(0.0f, std::min<float>(fSlow38 * fRec16[0], std::max<float>(fSlow40 * (fSlow37 - fRec16[0]) + 1.0f, fSlow39)) * (1.0f - fSlow36 * float(iRec10[0]))) + std::max<float>(0.0f, std::min<float>(fSlow21 * fRec9[0], std::max<float>(fSlow23 * (fSlow20 - fRec9[0]) + 1.0f, fSlow22)) * (1.0f - fSlow19 * float(iRec0[0])));
+			float fTemp19 = float(input0[i0]) + fSlow75 * fRec31[1];
+			float fTemp20 = float((fSlow0 == fVec1[1]) | iSlow1);
+			fRec34[0] = fSlow76 * (1.0f - 0.999f * fTemp20) + 0.999f * fTemp20 * fRec34[1];
+			float fTemp21 = fRec33[1] + fSlow77 * fRec34[0];
+			fRec33[0] = fTemp21 - std::floor(fTemp21);
+			int iTemp22 = int(65536.0f * fRec33[0]);
+			float fTemp23 = ftbl0mydspSIG0[iTemp22];
+			float fTemp24 = ftbl1mydspSIG1[iTemp22];
+			fRec31[0] = fTemp24 * std::cos(fTemp19) + fTemp23 * std::sin(fTemp19);
+			output0[i0] = FAUSTFLOAT(fSlow78 * fRec31[0] * fTemp18);
+			float fTemp25 = float(input1[i0]) + fSlow75 * fRec36[1];
+			fRec36[0] = fTemp24 * std::cos(fTemp25) + fTemp23 * std::sin(fTemp25);
+			output1[i0] = FAUSTFLOAT(fSlow78 * fRec36[0] * fTemp18);
 			iVec0[1] = iVec0[0];
-			iRec2[1] = iRec2[0];
-			iRec3[1] = iRec3[0];
-			fRec1[1] = fRec1[0];
-			fRec4[1] = fRec4[0];
-			fRec5[1] = fRec5[0];
 			fVec1[1] = fVec1[0];
+			iRec1[1] = iRec1[0];
+			fRec2[1] = fRec2[0];
+			iRec5[1] = iRec5[0];
+			iRec6[1] = iRec6[0];
+			fRec4[1] = fRec4[0];
+			fRec3[1] = fRec3[0];
+			fRec7[1] = fRec7[0];
+			fRec8[1] = fRec8[0];
 			fVec2[1] = fVec2[0];
 			iRec0[1] = iRec0[0];
-			fRec6[1] = fRec6[0];
-			iRec9[1] = iRec9[0];
-			fRec8[1] = fRec8[0];
-			fRec10[1] = fRec10[0];
-			fRec11[1] = fRec11[0];
-			fVec3[1] = fVec3[0];
-			iRec7[1] = iRec7[0];
-			fRec12[1] = fRec12[0];
-			iRec15[1] = iRec15[0];
-			fRec14[1] = fRec14[0];
-			fRec16[1] = fRec16[0];
-			fRec17[1] = fRec17[0];
-			fVec4[1] = fVec4[0];
+			fRec9[1] = fRec9[0];
 			iRec13[1] = iRec13[0];
+			fRec12[1] = fRec12[0];
+			fRec11[1] = fRec11[0];
+			fRec14[1] = fRec14[0];
+			fRec15[1] = fRec15[0];
+			fVec3[1] = fVec3[0];
+			iRec10[1] = iRec10[0];
+			fRec16[1] = fRec16[0];
+			iRec20[1] = iRec20[0];
+			fRec19[1] = fRec19[0];
 			fRec18[1] = fRec18[0];
-			iRec21[1] = iRec21[0];
-			fRec20[1] = fRec20[0];
+			fRec21[1] = fRec21[0];
 			fRec22[1] = fRec22[0];
+			fVec4[1] = fVec4[0];
+			iRec17[1] = iRec17[0];
 			fRec23[1] = fRec23[0];
-			fVec5[1] = fVec5[0];
-			iRec19[1] = iRec19[0];
-			fRec24[1] = fRec24[0];
-			fRec28[1] = fRec28[0];
-			fRec27[1] = fRec27[0];
+			iRec27[1] = iRec27[0];
+			fRec26[1] = fRec26[0];
 			fRec25[1] = fRec25[0];
+			fRec28[1] = fRec28[0];
+			fRec29[1] = fRec29[0];
+			fVec5[1] = fVec5[0];
+			iRec24[1] = iRec24[0];
 			fRec30[1] = fRec30[0];
+			fRec34[1] = fRec34[0];
+			fRec33[1] = fRec33[0];
+			fRec31[1] = fRec31[0];
+			fRec36[1] = fRec36[0];
 		}
 	}
 
@@ -15819,125 +15942,141 @@ class mydsp : public base_dsp {
 	#define FAUST_COMPILATION_OPIONS "-a /usr/local/share/faust/juce/juce-plugin.cpp -lang cpp -i -scn base_dsp -es 1 -mcd 16 -uim -single -ftz 0"
 	#define FAUST_INPUTS 2
 	#define FAUST_OUTPUTS 2
-	#define FAUST_ACTIVES 57
+	#define FAUST_ACTIVES 65
 	#define FAUST_PASSIVES 0
 
-	FAUST_ADDVERTICALSLIDER(" 0/[0]g1/frq", fVslider47, 0.0f, 0.0f, 2e+03f, 0.1f);
-	FAUST_ADDVERTICALSLIDER(" 0/[0]g1/frq rnd", fVslider46, 0.0f, 0.0f, 1.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER(" 0/[0]g1/pw", fVslider45, 0.0f, 0.0f, 1.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER(" 0/[0]g1/pw rnd", fVslider44, 0.0f, 0.0f, 1.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER(" 0/[1]g2/frq", fVslider43, 0.0f, 0.0f, 2e+03f, 0.1f);
-	FAUST_ADDVERTICALSLIDER(" 0/[1]g2/frq rnd", fVslider42, 0.0f, 0.0f, 1.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER(" 0/[1]g2/pw", fVslider41, 0.0f, 0.0f, 1.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER(" 0/[1]g2/pw rnd", fVslider40, 0.0f, 0.0f, 1.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER(" 0/[2]env/attack", fVslider49, 0.0f, 0.0f, 0.01f, 0.0001f);
-	FAUST_ADDVERTICALSLIDER(" 0/[2]env/decay", fVslider50, 0.0f, 0.0f, 0.01f, 0.0001f);
-	FAUST_ADDVERTICALSLIDER(" 0/[2]env/sustain", fVslider51, 0.0f, 0.0f, 1.0f, 0.0001f);
-	FAUST_ADDVERTICALSLIDER(" 0/[2]env/release", fVslider48, 0.01f, 0.0f, 1.0f, 0.0001f);
-	FAUST_ADDVERTICALSLIDER(" 0/noise rate", fVslider39, 2e+04f, 1.0f, 2e+04f, 1.0f);
-	FAUST_ADDVERTICALSLIDER(" 1/[0]g1/frq", fVslider34, 0.0f, 0.0f, 2e+03f, 0.1f);
-	FAUST_ADDVERTICALSLIDER(" 1/[0]g1/frq rnd", fVslider33, 0.0f, 0.0f, 1.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER(" 1/[0]g1/pw", fVslider32, 0.0f, 0.0f, 1.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER(" 1/[0]g1/pw rnd", fVslider31, 0.0f, 0.0f, 1.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER(" 1/[1]g2/frq", fVslider30, 0.0f, 0.0f, 2e+03f, 0.1f);
-	FAUST_ADDVERTICALSLIDER(" 1/[1]g2/frq rnd", fVslider29, 0.0f, 0.0f, 1.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER(" 1/[1]g2/pw", fVslider28, 0.0f, 0.0f, 1.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER(" 1/[1]g2/pw rnd", fVslider27, 0.0f, 0.0f, 1.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER(" 1/[2]env/attack", fVslider36, 0.0f, 0.0f, 0.01f, 0.0001f);
-	FAUST_ADDVERTICALSLIDER(" 1/[2]env/decay", fVslider37, 0.0f, 0.0f, 0.01f, 0.0001f);
-	FAUST_ADDVERTICALSLIDER(" 1/[2]env/sustain", fVslider38, 0.0f, 0.0f, 1.0f, 0.0001f);
-	FAUST_ADDVERTICALSLIDER(" 1/[2]env/release", fVslider35, 0.01f, 0.0f, 1.0f, 0.0001f);
-	FAUST_ADDVERTICALSLIDER(" 1/noise rate", fVslider26, 2e+04f, 1.0f, 2e+04f, 1.0f);
-	FAUST_ADDVERTICALSLIDER(" 2/[0]g1/frq", fVslider21, 0.0f, 0.0f, 2e+03f, 0.1f);
-	FAUST_ADDVERTICALSLIDER(" 2/[0]g1/frq rnd", fVslider20, 0.0f, 0.0f, 1.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER(" 2/[0]g1/pw", fVslider19, 0.0f, 0.0f, 1.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER(" 2/[0]g1/pw rnd", fVslider18, 0.0f, 0.0f, 1.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER(" 2/[1]g2/frq", fVslider17, 0.0f, 0.0f, 2e+03f, 0.1f);
-	FAUST_ADDVERTICALSLIDER(" 2/[1]g2/frq rnd", fVslider16, 0.0f, 0.0f, 1.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER(" 2/[1]g2/pw", fVslider15, 0.0f, 0.0f, 1.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER(" 2/[1]g2/pw rnd", fVslider14, 0.0f, 0.0f, 1.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER(" 2/[2]env/attack", fVslider23, 0.0f, 0.0f, 0.01f, 0.0001f);
-	FAUST_ADDVERTICALSLIDER(" 2/[2]env/decay", fVslider24, 0.0f, 0.0f, 0.01f, 0.0001f);
-	FAUST_ADDVERTICALSLIDER(" 2/[2]env/sustain", fVslider25, 0.0f, 0.0f, 1.0f, 0.0001f);
-	FAUST_ADDVERTICALSLIDER(" 2/[2]env/release", fVslider22, 0.01f, 0.0f, 1.0f, 0.0001f);
-	FAUST_ADDVERTICALSLIDER(" 2/noise rate", fVslider13, 2e+04f, 1.0f, 2e+04f, 1.0f);
-	FAUST_ADDVERTICALSLIDER(" 3/[0]g1/frq", fVslider8, 0.0f, 0.0f, 2e+03f, 0.1f);
-	FAUST_ADDVERTICALSLIDER(" 3/[0]g1/frq rnd", fVslider7, 0.0f, 0.0f, 1.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER(" 3/[0]g1/pw", fVslider6, 0.0f, 0.0f, 1.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER(" 3/[0]g1/pw rnd", fVslider5, 0.0f, 0.0f, 1.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER(" 3/[1]g2/frq", fVslider4, 0.0f, 0.0f, 2e+03f, 0.1f);
-	FAUST_ADDVERTICALSLIDER(" 3/[1]g2/frq rnd", fVslider3, 0.0f, 0.0f, 1.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER(" 3/[1]g2/pw", fVslider2, 0.0f, 0.0f, 1.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER(" 3/[1]g2/pw rnd", fVslider1, 0.0f, 0.0f, 1.0f, 0.001f);
-	FAUST_ADDVERTICALSLIDER(" 3/[2]env/attack", fVslider10, 0.0f, 0.0f, 0.01f, 0.0001f);
-	FAUST_ADDVERTICALSLIDER(" 3/[2]env/decay", fVslider11, 0.0f, 0.0f, 0.01f, 0.0001f);
-	FAUST_ADDVERTICALSLIDER(" 3/[2]env/sustain", fVslider12, 0.0f, 0.0f, 1.0f, 0.0001f);
-	FAUST_ADDVERTICALSLIDER(" 3/[2]env/release", fVslider9, 0.01f, 0.0f, 1.0f, 0.0001f);
-	FAUST_ADDVERTICALSLIDER(" 3/noise rate", fVslider0, 2e+04f, 1.0f, 2e+04f, 1.0f);
-	FAUST_ADDVERTICALSLIDER("feedback", fVslider52, 0.0f, 0.0f, 1.0f, 0.001f);
-	FAUST_ADDHORIZONTALSLIDER("hidden (yeah! don't look here!)/bend", fHslider0, 0.0f, -2.0f, 2.0f, 0.01f);
-	FAUST_ADDNUMENTRY("hidden (yeah! don't look here!)/freq", fEntry0, 0.0f, 0.0f, 2e+04f, 1.0f);
-	FAUST_ADDNUMENTRY("hidden (yeah! don't look here!)/gain", fEntry1, 0.5f, 0.0f, 1.0f, 0.01f);
-	FAUST_ADDBUTTON("hidden (yeah! don't look here!)/gate", fButton0);
+	FAUST_ADDVERTICALSLIDER(" 0/[0]g1/frq", fVslider55, 0.0f, 0.0f, 2e+03f, 0.1f);
+	FAUST_ADDVERTICALSLIDER(" 0/[0]g1/frq rnd", fVslider54, 0.0f, 0.0f, 1.0f, 0.001f);
+	FAUST_ADDVERTICALSLIDER(" 0/[0]g1/pw", fVslider53, 0.0f, 0.0f, 1.0f, 0.001f);
+	FAUST_ADDVERTICALSLIDER(" 0/[0]g1/pw rnd", fVslider52, 0.0f, 0.0f, 1.0f, 0.001f);
+	FAUST_ADDVERTICALSLIDER(" 0/[1]g2/frq", fVslider51, 0.0f, 0.0f, 2e+03f, 0.1f);
+	FAUST_ADDVERTICALSLIDER(" 0/[1]g2/frq rnd", fVslider50, 0.0f, 0.0f, 1.0f, 0.001f);
+	FAUST_ADDVERTICALSLIDER(" 0/[1]g2/pw", fVslider49, 0.0f, 0.0f, 1.0f, 0.001f);
+	FAUST_ADDVERTICALSLIDER(" 0/[1]g2/pw rnd", fVslider48, 0.0f, 0.0f, 1.0f, 0.001f);
+	FAUST_ADDVERTICALSLIDER(" 0/[2]grain noise (rnd)/filter", fVslider47, 2e+04f, 1.0f, 2e+04f, 1.0f);
+	FAUST_ADDVERTICALSLIDER(" 0/[2]grain noise (rnd)/rate", fVslider46, 2e+04f, 1.0f, 2e+04f, 1.0f);
+	FAUST_ADDVERTICALSLIDER(" 0/[3]grain env/attack", fVslider57, 0.0f, 0.0f, 0.01f, 0.0001f);
+	FAUST_ADDVERTICALSLIDER(" 0/[3]grain env/decay", fVslider58, 0.0f, 0.0f, 0.01f, 0.0001f);
+	FAUST_ADDVERTICALSLIDER(" 0/[3]grain env/sustain", fVslider59, 0.0f, 0.0f, 1.0f, 0.0001f);
+	FAUST_ADDVERTICALSLIDER(" 0/[3]grain env/release", fVslider56, 0.01f, 0.0f, 1.0f, 0.0001f);
+	FAUST_ADDVERTICALSLIDER(" 1/[0]g1/frq", fVslider41, 0.0f, 0.0f, 2e+03f, 0.1f);
+	FAUST_ADDVERTICALSLIDER(" 1/[0]g1/frq rnd", fVslider40, 0.0f, 0.0f, 1.0f, 0.001f);
+	FAUST_ADDVERTICALSLIDER(" 1/[0]g1/pw", fVslider39, 0.0f, 0.0f, 1.0f, 0.001f);
+	FAUST_ADDVERTICALSLIDER(" 1/[0]g1/pw rnd", fVslider38, 0.0f, 0.0f, 1.0f, 0.001f);
+	FAUST_ADDVERTICALSLIDER(" 1/[1]g2/frq", fVslider37, 0.0f, 0.0f, 2e+03f, 0.1f);
+	FAUST_ADDVERTICALSLIDER(" 1/[1]g2/frq rnd", fVslider36, 0.0f, 0.0f, 1.0f, 0.001f);
+	FAUST_ADDVERTICALSLIDER(" 1/[1]g2/pw", fVslider35, 0.0f, 0.0f, 1.0f, 0.001f);
+	FAUST_ADDVERTICALSLIDER(" 1/[1]g2/pw rnd", fVslider34, 0.0f, 0.0f, 1.0f, 0.001f);
+	FAUST_ADDVERTICALSLIDER(" 1/[2]grain noise (rnd)/filter", fVslider33, 2e+04f, 1.0f, 2e+04f, 1.0f);
+	FAUST_ADDVERTICALSLIDER(" 1/[2]grain noise (rnd)/rate", fVslider32, 2e+04f, 1.0f, 2e+04f, 1.0f);
+	FAUST_ADDVERTICALSLIDER(" 1/[3]grain env/attack", fVslider43, 0.0f, 0.0f, 0.01f, 0.0001f);
+	FAUST_ADDVERTICALSLIDER(" 1/[3]grain env/decay", fVslider44, 0.0f, 0.0f, 0.01f, 0.0001f);
+	FAUST_ADDVERTICALSLIDER(" 1/[3]grain env/sustain", fVslider45, 0.0f, 0.0f, 1.0f, 0.0001f);
+	FAUST_ADDVERTICALSLIDER(" 1/[3]grain env/release", fVslider42, 0.01f, 0.0f, 1.0f, 0.0001f);
+	FAUST_ADDVERTICALSLIDER(" 2/[0]g1/frq", fVslider27, 0.0f, 0.0f, 2e+03f, 0.1f);
+	FAUST_ADDVERTICALSLIDER(" 2/[0]g1/frq rnd", fVslider26, 0.0f, 0.0f, 1.0f, 0.001f);
+	FAUST_ADDVERTICALSLIDER(" 2/[0]g1/pw", fVslider25, 0.0f, 0.0f, 1.0f, 0.001f);
+	FAUST_ADDVERTICALSLIDER(" 2/[0]g1/pw rnd", fVslider24, 0.0f, 0.0f, 1.0f, 0.001f);
+	FAUST_ADDVERTICALSLIDER(" 2/[1]g2/frq", fVslider23, 0.0f, 0.0f, 2e+03f, 0.1f);
+	FAUST_ADDVERTICALSLIDER(" 2/[1]g2/frq rnd", fVslider22, 0.0f, 0.0f, 1.0f, 0.001f);
+	FAUST_ADDVERTICALSLIDER(" 2/[1]g2/pw", fVslider21, 0.0f, 0.0f, 1.0f, 0.001f);
+	FAUST_ADDVERTICALSLIDER(" 2/[1]g2/pw rnd", fVslider20, 0.0f, 0.0f, 1.0f, 0.001f);
+	FAUST_ADDVERTICALSLIDER(" 2/[2]grain noise (rnd)/filter", fVslider19, 2e+04f, 1.0f, 2e+04f, 1.0f);
+	FAUST_ADDVERTICALSLIDER(" 2/[2]grain noise (rnd)/rate", fVslider18, 2e+04f, 1.0f, 2e+04f, 1.0f);
+	FAUST_ADDVERTICALSLIDER(" 2/[3]grain env/attack", fVslider29, 0.0f, 0.0f, 0.01f, 0.0001f);
+	FAUST_ADDVERTICALSLIDER(" 2/[3]grain env/decay", fVslider30, 0.0f, 0.0f, 0.01f, 0.0001f);
+	FAUST_ADDVERTICALSLIDER(" 2/[3]grain env/sustain", fVslider31, 0.0f, 0.0f, 1.0f, 0.0001f);
+	FAUST_ADDVERTICALSLIDER(" 2/[3]grain env/release", fVslider28, 0.01f, 0.0f, 1.0f, 0.0001f);
+	FAUST_ADDVERTICALSLIDER(" 3/[0]g1/frq", fVslider13, 0.0f, 0.0f, 2e+03f, 0.1f);
+	FAUST_ADDVERTICALSLIDER(" 3/[0]g1/frq rnd", fVslider12, 0.0f, 0.0f, 1.0f, 0.001f);
+	FAUST_ADDVERTICALSLIDER(" 3/[0]g1/pw", fVslider11, 0.0f, 0.0f, 1.0f, 0.001f);
+	FAUST_ADDVERTICALSLIDER(" 3/[0]g1/pw rnd", fVslider10, 0.0f, 0.0f, 1.0f, 0.001f);
+	FAUST_ADDVERTICALSLIDER(" 3/[1]g2/frq", fVslider9, 0.0f, 0.0f, 2e+03f, 0.1f);
+	FAUST_ADDVERTICALSLIDER(" 3/[1]g2/frq rnd", fVslider8, 0.0f, 0.0f, 1.0f, 0.001f);
+	FAUST_ADDVERTICALSLIDER(" 3/[1]g2/pw", fVslider7, 0.0f, 0.0f, 1.0f, 0.001f);
+	FAUST_ADDVERTICALSLIDER(" 3/[1]g2/pw rnd", fVslider6, 0.0f, 0.0f, 1.0f, 0.001f);
+	FAUST_ADDVERTICALSLIDER(" 3/[2]grain noise (rnd)/filter", fVslider5, 2e+04f, 1.0f, 2e+04f, 1.0f);
+	FAUST_ADDVERTICALSLIDER(" 3/[2]grain noise (rnd)/rate", fVslider4, 2e+04f, 1.0f, 2e+04f, 1.0f);
+	FAUST_ADDVERTICALSLIDER(" 3/[3]grain env/attack", fVslider15, 0.0f, 0.0f, 0.01f, 0.0001f);
+	FAUST_ADDVERTICALSLIDER(" 3/[3]grain env/decay", fVslider16, 0.0f, 0.0f, 0.01f, 0.0001f);
+	FAUST_ADDVERTICALSLIDER(" 3/[3]grain env/sustain", fVslider17, 0.0f, 0.0f, 1.0f, 0.0001f);
+	FAUST_ADDVERTICALSLIDER(" 3/[3]grain env/release", fVslider14, 0.01f, 0.0f, 1.0f, 0.0001f);
+	FAUST_ADDVERTICALSLIDER("global/feedback", fVslider60, 0.0f, 0.0f, 1.0f, 0.001f);
+	FAUST_ADDVERTICALSLIDER("global/[1]env/attack", fVslider1, 0.0f, 0.0f, 4.0f, 0.0001f);
+	FAUST_ADDVERTICALSLIDER("global/[1]env/decay", fVslider2, 0.0f, 0.0f, 4.0f, 0.0001f);
+	FAUST_ADDVERTICALSLIDER("global/[1]env/sustain", fVslider3, 1.0f, 0.0f, 1.0f, 0.0001f);
+	FAUST_ADDVERTICALSLIDER("global/[1]env/release", fVslider0, 0.0f, 0.0f, 4.0f, 0.0001f);
+	FAUST_ADDHORIZONTALSLIDER("hidden (nothing to see here!)/bend", fHslider0, 0.0f, -2.0f, 2.0f, 0.01f);
+	FAUST_ADDNUMENTRY("hidden (nothing to see here!)/freq", fEntry0, 0.0f, 0.0f, 2e+04f, 1.0f);
+	FAUST_ADDNUMENTRY("hidden (nothing to see here!)/gain", fEntry1, 0.5f, 0.0f, 1.0f, 0.01f);
+	FAUST_ADDBUTTON("hidden (nothing to see here!)/gate", fButton0);
 
 	#define FAUST_LIST_ACTIVES(p) \
-		p(VERTICALSLIDER, frq, " 0/[0]g1/frq", fVslider47, 0.0f, 0.0f, 2e+03f, 0.1f) \
-		p(VERTICALSLIDER, frq_rnd, " 0/[0]g1/frq rnd", fVslider46, 0.0f, 0.0f, 1.0f, 0.001f) \
-		p(VERTICALSLIDER, pw, " 0/[0]g1/pw", fVslider45, 0.0f, 0.0f, 1.0f, 0.001f) \
-		p(VERTICALSLIDER, pw_rnd, " 0/[0]g1/pw rnd", fVslider44, 0.0f, 0.0f, 1.0f, 0.001f) \
-		p(VERTICALSLIDER, frq, " 0/[1]g2/frq", fVslider43, 0.0f, 0.0f, 2e+03f, 0.1f) \
-		p(VERTICALSLIDER, frq_rnd, " 0/[1]g2/frq rnd", fVslider42, 0.0f, 0.0f, 1.0f, 0.001f) \
-		p(VERTICALSLIDER, pw, " 0/[1]g2/pw", fVslider41, 0.0f, 0.0f, 1.0f, 0.001f) \
-		p(VERTICALSLIDER, pw_rnd, " 0/[1]g2/pw rnd", fVslider40, 0.0f, 0.0f, 1.0f, 0.001f) \
-		p(VERTICALSLIDER, attack, " 0/[2]env/attack", fVslider49, 0.0f, 0.0f, 0.01f, 0.0001f) \
-		p(VERTICALSLIDER, decay, " 0/[2]env/decay", fVslider50, 0.0f, 0.0f, 0.01f, 0.0001f) \
-		p(VERTICALSLIDER, sustain, " 0/[2]env/sustain", fVslider51, 0.0f, 0.0f, 1.0f, 0.0001f) \
-		p(VERTICALSLIDER, release, " 0/[2]env/release", fVslider48, 0.01f, 0.0f, 1.0f, 0.0001f) \
-		p(VERTICALSLIDER, noise_rate, " 0/noise rate", fVslider39, 2e+04f, 1.0f, 2e+04f, 1.0f) \
-		p(VERTICALSLIDER, frq, " 1/[0]g1/frq", fVslider34, 0.0f, 0.0f, 2e+03f, 0.1f) \
-		p(VERTICALSLIDER, frq_rnd, " 1/[0]g1/frq rnd", fVslider33, 0.0f, 0.0f, 1.0f, 0.001f) \
-		p(VERTICALSLIDER, pw, " 1/[0]g1/pw", fVslider32, 0.0f, 0.0f, 1.0f, 0.001f) \
-		p(VERTICALSLIDER, pw_rnd, " 1/[0]g1/pw rnd", fVslider31, 0.0f, 0.0f, 1.0f, 0.001f) \
-		p(VERTICALSLIDER, frq, " 1/[1]g2/frq", fVslider30, 0.0f, 0.0f, 2e+03f, 0.1f) \
-		p(VERTICALSLIDER, frq_rnd, " 1/[1]g2/frq rnd", fVslider29, 0.0f, 0.0f, 1.0f, 0.001f) \
-		p(VERTICALSLIDER, pw, " 1/[1]g2/pw", fVslider28, 0.0f, 0.0f, 1.0f, 0.001f) \
-		p(VERTICALSLIDER, pw_rnd, " 1/[1]g2/pw rnd", fVslider27, 0.0f, 0.0f, 1.0f, 0.001f) \
-		p(VERTICALSLIDER, attack, " 1/[2]env/attack", fVslider36, 0.0f, 0.0f, 0.01f, 0.0001f) \
-		p(VERTICALSLIDER, decay, " 1/[2]env/decay", fVslider37, 0.0f, 0.0f, 0.01f, 0.0001f) \
-		p(VERTICALSLIDER, sustain, " 1/[2]env/sustain", fVslider38, 0.0f, 0.0f, 1.0f, 0.0001f) \
-		p(VERTICALSLIDER, release, " 1/[2]env/release", fVslider35, 0.01f, 0.0f, 1.0f, 0.0001f) \
-		p(VERTICALSLIDER, noise_rate, " 1/noise rate", fVslider26, 2e+04f, 1.0f, 2e+04f, 1.0f) \
-		p(VERTICALSLIDER, frq, " 2/[0]g1/frq", fVslider21, 0.0f, 0.0f, 2e+03f, 0.1f) \
-		p(VERTICALSLIDER, frq_rnd, " 2/[0]g1/frq rnd", fVslider20, 0.0f, 0.0f, 1.0f, 0.001f) \
-		p(VERTICALSLIDER, pw, " 2/[0]g1/pw", fVslider19, 0.0f, 0.0f, 1.0f, 0.001f) \
-		p(VERTICALSLIDER, pw_rnd, " 2/[0]g1/pw rnd", fVslider18, 0.0f, 0.0f, 1.0f, 0.001f) \
-		p(VERTICALSLIDER, frq, " 2/[1]g2/frq", fVslider17, 0.0f, 0.0f, 2e+03f, 0.1f) \
-		p(VERTICALSLIDER, frq_rnd, " 2/[1]g2/frq rnd", fVslider16, 0.0f, 0.0f, 1.0f, 0.001f) \
-		p(VERTICALSLIDER, pw, " 2/[1]g2/pw", fVslider15, 0.0f, 0.0f, 1.0f, 0.001f) \
-		p(VERTICALSLIDER, pw_rnd, " 2/[1]g2/pw rnd", fVslider14, 0.0f, 0.0f, 1.0f, 0.001f) \
-		p(VERTICALSLIDER, attack, " 2/[2]env/attack", fVslider23, 0.0f, 0.0f, 0.01f, 0.0001f) \
-		p(VERTICALSLIDER, decay, " 2/[2]env/decay", fVslider24, 0.0f, 0.0f, 0.01f, 0.0001f) \
-		p(VERTICALSLIDER, sustain, " 2/[2]env/sustain", fVslider25, 0.0f, 0.0f, 1.0f, 0.0001f) \
-		p(VERTICALSLIDER, release, " 2/[2]env/release", fVslider22, 0.01f, 0.0f, 1.0f, 0.0001f) \
-		p(VERTICALSLIDER, noise_rate, " 2/noise rate", fVslider13, 2e+04f, 1.0f, 2e+04f, 1.0f) \
-		p(VERTICALSLIDER, frq, " 3/[0]g1/frq", fVslider8, 0.0f, 0.0f, 2e+03f, 0.1f) \
-		p(VERTICALSLIDER, frq_rnd, " 3/[0]g1/frq rnd", fVslider7, 0.0f, 0.0f, 1.0f, 0.001f) \
-		p(VERTICALSLIDER, pw, " 3/[0]g1/pw", fVslider6, 0.0f, 0.0f, 1.0f, 0.001f) \
-		p(VERTICALSLIDER, pw_rnd, " 3/[0]g1/pw rnd", fVslider5, 0.0f, 0.0f, 1.0f, 0.001f) \
-		p(VERTICALSLIDER, frq, " 3/[1]g2/frq", fVslider4, 0.0f, 0.0f, 2e+03f, 0.1f) \
-		p(VERTICALSLIDER, frq_rnd, " 3/[1]g2/frq rnd", fVslider3, 0.0f, 0.0f, 1.0f, 0.001f) \
-		p(VERTICALSLIDER, pw, " 3/[1]g2/pw", fVslider2, 0.0f, 0.0f, 1.0f, 0.001f) \
-		p(VERTICALSLIDER, pw_rnd, " 3/[1]g2/pw rnd", fVslider1, 0.0f, 0.0f, 1.0f, 0.001f) \
-		p(VERTICALSLIDER, attack, " 3/[2]env/attack", fVslider10, 0.0f, 0.0f, 0.01f, 0.0001f) \
-		p(VERTICALSLIDER, decay, " 3/[2]env/decay", fVslider11, 0.0f, 0.0f, 0.01f, 0.0001f) \
-		p(VERTICALSLIDER, sustain, " 3/[2]env/sustain", fVslider12, 0.0f, 0.0f, 1.0f, 0.0001f) \
-		p(VERTICALSLIDER, release, " 3/[2]env/release", fVslider9, 0.01f, 0.0f, 1.0f, 0.0001f) \
-		p(VERTICALSLIDER, noise_rate, " 3/noise rate", fVslider0, 2e+04f, 1.0f, 2e+04f, 1.0f) \
-		p(VERTICALSLIDER, feedback, "feedback", fVslider52, 0.0f, 0.0f, 1.0f, 0.001f) \
-		p(HORIZONTALSLIDER, bend, "hidden (yeah! don't look here!)/bend", fHslider0, 0.0f, -2.0f, 2.0f, 0.01f) \
-		p(NUMENTRY, freq, "hidden (yeah! don't look here!)/freq", fEntry0, 0.0f, 0.0f, 2e+04f, 1.0f) \
-		p(NUMENTRY, gain, "hidden (yeah! don't look here!)/gain", fEntry1, 0.5f, 0.0f, 1.0f, 0.01f) \
-		p(BUTTON, gate, "hidden (yeah! don't look here!)/gate", fButton0, 0.0f, 0.0f, 1.0f, 1.0f) \
+		p(VERTICALSLIDER, frq, " 0/[0]g1/frq", fVslider55, 0.0f, 0.0f, 2e+03f, 0.1f) \
+		p(VERTICALSLIDER, frq_rnd, " 0/[0]g1/frq rnd", fVslider54, 0.0f, 0.0f, 1.0f, 0.001f) \
+		p(VERTICALSLIDER, pw, " 0/[0]g1/pw", fVslider53, 0.0f, 0.0f, 1.0f, 0.001f) \
+		p(VERTICALSLIDER, pw_rnd, " 0/[0]g1/pw rnd", fVslider52, 0.0f, 0.0f, 1.0f, 0.001f) \
+		p(VERTICALSLIDER, frq, " 0/[1]g2/frq", fVslider51, 0.0f, 0.0f, 2e+03f, 0.1f) \
+		p(VERTICALSLIDER, frq_rnd, " 0/[1]g2/frq rnd", fVslider50, 0.0f, 0.0f, 1.0f, 0.001f) \
+		p(VERTICALSLIDER, pw, " 0/[1]g2/pw", fVslider49, 0.0f, 0.0f, 1.0f, 0.001f) \
+		p(VERTICALSLIDER, pw_rnd, " 0/[1]g2/pw rnd", fVslider48, 0.0f, 0.0f, 1.0f, 0.001f) \
+		p(VERTICALSLIDER, filter, " 0/[2]grain noise (rnd)/filter", fVslider47, 2e+04f, 1.0f, 2e+04f, 1.0f) \
+		p(VERTICALSLIDER, rate, " 0/[2]grain noise (rnd)/rate", fVslider46, 2e+04f, 1.0f, 2e+04f, 1.0f) \
+		p(VERTICALSLIDER, attack, " 0/[3]grain env/attack", fVslider57, 0.0f, 0.0f, 0.01f, 0.0001f) \
+		p(VERTICALSLIDER, decay, " 0/[3]grain env/decay", fVslider58, 0.0f, 0.0f, 0.01f, 0.0001f) \
+		p(VERTICALSLIDER, sustain, " 0/[3]grain env/sustain", fVslider59, 0.0f, 0.0f, 1.0f, 0.0001f) \
+		p(VERTICALSLIDER, release, " 0/[3]grain env/release", fVslider56, 0.01f, 0.0f, 1.0f, 0.0001f) \
+		p(VERTICALSLIDER, frq, " 1/[0]g1/frq", fVslider41, 0.0f, 0.0f, 2e+03f, 0.1f) \
+		p(VERTICALSLIDER, frq_rnd, " 1/[0]g1/frq rnd", fVslider40, 0.0f, 0.0f, 1.0f, 0.001f) \
+		p(VERTICALSLIDER, pw, " 1/[0]g1/pw", fVslider39, 0.0f, 0.0f, 1.0f, 0.001f) \
+		p(VERTICALSLIDER, pw_rnd, " 1/[0]g1/pw rnd", fVslider38, 0.0f, 0.0f, 1.0f, 0.001f) \
+		p(VERTICALSLIDER, frq, " 1/[1]g2/frq", fVslider37, 0.0f, 0.0f, 2e+03f, 0.1f) \
+		p(VERTICALSLIDER, frq_rnd, " 1/[1]g2/frq rnd", fVslider36, 0.0f, 0.0f, 1.0f, 0.001f) \
+		p(VERTICALSLIDER, pw, " 1/[1]g2/pw", fVslider35, 0.0f, 0.0f, 1.0f, 0.001f) \
+		p(VERTICALSLIDER, pw_rnd, " 1/[1]g2/pw rnd", fVslider34, 0.0f, 0.0f, 1.0f, 0.001f) \
+		p(VERTICALSLIDER, filter, " 1/[2]grain noise (rnd)/filter", fVslider33, 2e+04f, 1.0f, 2e+04f, 1.0f) \
+		p(VERTICALSLIDER, rate, " 1/[2]grain noise (rnd)/rate", fVslider32, 2e+04f, 1.0f, 2e+04f, 1.0f) \
+		p(VERTICALSLIDER, attack, " 1/[3]grain env/attack", fVslider43, 0.0f, 0.0f, 0.01f, 0.0001f) \
+		p(VERTICALSLIDER, decay, " 1/[3]grain env/decay", fVslider44, 0.0f, 0.0f, 0.01f, 0.0001f) \
+		p(VERTICALSLIDER, sustain, " 1/[3]grain env/sustain", fVslider45, 0.0f, 0.0f, 1.0f, 0.0001f) \
+		p(VERTICALSLIDER, release, " 1/[3]grain env/release", fVslider42, 0.01f, 0.0f, 1.0f, 0.0001f) \
+		p(VERTICALSLIDER, frq, " 2/[0]g1/frq", fVslider27, 0.0f, 0.0f, 2e+03f, 0.1f) \
+		p(VERTICALSLIDER, frq_rnd, " 2/[0]g1/frq rnd", fVslider26, 0.0f, 0.0f, 1.0f, 0.001f) \
+		p(VERTICALSLIDER, pw, " 2/[0]g1/pw", fVslider25, 0.0f, 0.0f, 1.0f, 0.001f) \
+		p(VERTICALSLIDER, pw_rnd, " 2/[0]g1/pw rnd", fVslider24, 0.0f, 0.0f, 1.0f, 0.001f) \
+		p(VERTICALSLIDER, frq, " 2/[1]g2/frq", fVslider23, 0.0f, 0.0f, 2e+03f, 0.1f) \
+		p(VERTICALSLIDER, frq_rnd, " 2/[1]g2/frq rnd", fVslider22, 0.0f, 0.0f, 1.0f, 0.001f) \
+		p(VERTICALSLIDER, pw, " 2/[1]g2/pw", fVslider21, 0.0f, 0.0f, 1.0f, 0.001f) \
+		p(VERTICALSLIDER, pw_rnd, " 2/[1]g2/pw rnd", fVslider20, 0.0f, 0.0f, 1.0f, 0.001f) \
+		p(VERTICALSLIDER, filter, " 2/[2]grain noise (rnd)/filter", fVslider19, 2e+04f, 1.0f, 2e+04f, 1.0f) \
+		p(VERTICALSLIDER, rate, " 2/[2]grain noise (rnd)/rate", fVslider18, 2e+04f, 1.0f, 2e+04f, 1.0f) \
+		p(VERTICALSLIDER, attack, " 2/[3]grain env/attack", fVslider29, 0.0f, 0.0f, 0.01f, 0.0001f) \
+		p(VERTICALSLIDER, decay, " 2/[3]grain env/decay", fVslider30, 0.0f, 0.0f, 0.01f, 0.0001f) \
+		p(VERTICALSLIDER, sustain, " 2/[3]grain env/sustain", fVslider31, 0.0f, 0.0f, 1.0f, 0.0001f) \
+		p(VERTICALSLIDER, release, " 2/[3]grain env/release", fVslider28, 0.01f, 0.0f, 1.0f, 0.0001f) \
+		p(VERTICALSLIDER, frq, " 3/[0]g1/frq", fVslider13, 0.0f, 0.0f, 2e+03f, 0.1f) \
+		p(VERTICALSLIDER, frq_rnd, " 3/[0]g1/frq rnd", fVslider12, 0.0f, 0.0f, 1.0f, 0.001f) \
+		p(VERTICALSLIDER, pw, " 3/[0]g1/pw", fVslider11, 0.0f, 0.0f, 1.0f, 0.001f) \
+		p(VERTICALSLIDER, pw_rnd, " 3/[0]g1/pw rnd", fVslider10, 0.0f, 0.0f, 1.0f, 0.001f) \
+		p(VERTICALSLIDER, frq, " 3/[1]g2/frq", fVslider9, 0.0f, 0.0f, 2e+03f, 0.1f) \
+		p(VERTICALSLIDER, frq_rnd, " 3/[1]g2/frq rnd", fVslider8, 0.0f, 0.0f, 1.0f, 0.001f) \
+		p(VERTICALSLIDER, pw, " 3/[1]g2/pw", fVslider7, 0.0f, 0.0f, 1.0f, 0.001f) \
+		p(VERTICALSLIDER, pw_rnd, " 3/[1]g2/pw rnd", fVslider6, 0.0f, 0.0f, 1.0f, 0.001f) \
+		p(VERTICALSLIDER, filter, " 3/[2]grain noise (rnd)/filter", fVslider5, 2e+04f, 1.0f, 2e+04f, 1.0f) \
+		p(VERTICALSLIDER, rate, " 3/[2]grain noise (rnd)/rate", fVslider4, 2e+04f, 1.0f, 2e+04f, 1.0f) \
+		p(VERTICALSLIDER, attack, " 3/[3]grain env/attack", fVslider15, 0.0f, 0.0f, 0.01f, 0.0001f) \
+		p(VERTICALSLIDER, decay, " 3/[3]grain env/decay", fVslider16, 0.0f, 0.0f, 0.01f, 0.0001f) \
+		p(VERTICALSLIDER, sustain, " 3/[3]grain env/sustain", fVslider17, 0.0f, 0.0f, 1.0f, 0.0001f) \
+		p(VERTICALSLIDER, release, " 3/[3]grain env/release", fVslider14, 0.01f, 0.0f, 1.0f, 0.0001f) \
+		p(VERTICALSLIDER, feedback, "global/feedback", fVslider60, 0.0f, 0.0f, 1.0f, 0.001f) \
+		p(VERTICALSLIDER, attack, "global/[1]env/attack", fVslider1, 0.0f, 0.0f, 4.0f, 0.0001f) \
+		p(VERTICALSLIDER, decay, "global/[1]env/decay", fVslider2, 0.0f, 0.0f, 4.0f, 0.0001f) \
+		p(VERTICALSLIDER, sustain, "global/[1]env/sustain", fVslider3, 1.0f, 0.0f, 1.0f, 0.0001f) \
+		p(VERTICALSLIDER, release, "global/[1]env/release", fVslider0, 0.0f, 0.0f, 4.0f, 0.0001f) \
+		p(HORIZONTALSLIDER, bend, "hidden (nothing to see here!)/bend", fHslider0, 0.0f, -2.0f, 2.0f, 0.01f) \
+		p(NUMENTRY, freq, "hidden (nothing to see here!)/freq", fEntry0, 0.0f, 0.0f, 2e+04f, 1.0f) \
+		p(NUMENTRY, gain, "hidden (nothing to see here!)/gain", fEntry1, 0.5f, 0.0f, 1.0f, 0.01f) \
+		p(BUTTON, gate, "hidden (nothing to see here!)/gate", fButton0, 0.0f, 0.0f, 1.0f, 1.0f) \
 
 	#define FAUST_LIST_PASSIVES(p) \
 
