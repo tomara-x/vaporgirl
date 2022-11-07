@@ -2,7 +2,7 @@
 author: "amy universe"
 license: "WTFPL"
 name: "quadrotorgirl"
-version: "0.06"
+version: "0.07"
 Code generated with Faust 2.50.6 (https://faust.grame.fr)
 Compilation options: -a /usr/local/share/faust/juce/juce-plugin.cpp -lang cpp -i -scn base_dsp -es 1 -mcd 16 -uim -single -ftz 0
 ------------------------------------------------------------ */
@@ -15247,7 +15247,7 @@ class mydsp : public base_dsp {
 		m->declare("platform.lib/version", "0.2");
 		m->declare("signals.lib/name", "Faust Signal Routing Library");
 		m->declare("signals.lib/version", "0.3");
-		m->declare("version", "0.06");
+		m->declare("version", "0.07");
 	}
 
 	virtual int getNumInputs() {
@@ -15876,7 +15876,7 @@ class mydsp : public base_dsp {
 			iRec24[0] = (iRec24[1] + 1) * (fTemp17 == 0.0f);
 			fRec30[0] = fTemp17 + fRec30[1] * float(fVec5[1] >= fTemp17);
 			float fTemp18 = std::max<float>(0.0f, std::min<float>(fSlow72 * fRec30[0], std::max<float>(fSlow74 * (fSlow71 - fRec30[0]) + 1.0f, fSlow73)) * (1.0f - fSlow70 * float(iRec24[0]))) + std::max<float>(0.0f, std::min<float>(fSlow55 * fRec23[0], std::max<float>(fSlow57 * (fSlow54 - fRec23[0]) + 1.0f, fSlow56)) * (1.0f - fSlow53 * float(iRec17[0]))) + std::max<float>(0.0f, std::min<float>(fSlow38 * fRec16[0], std::max<float>(fSlow40 * (fSlow37 - fRec16[0]) + 1.0f, fSlow39)) * (1.0f - fSlow36 * float(iRec10[0]))) + std::max<float>(0.0f, std::min<float>(fSlow21 * fRec9[0], std::max<float>(fSlow23 * (fSlow20 - fRec9[0]) + 1.0f, fSlow22)) * (1.0f - fSlow19 * float(iRec0[0])));
-			float fTemp19 = float(input0[i0]) + fSlow75 * fRec31[1];
+			float fTemp19 = 3.1415927f * (float(input0[i0]) + fSlow75 * fRec31[1]);
 			float fTemp20 = float((fSlow0 == fVec1[1]) | iSlow1);
 			fRec34[0] = fSlow76 * (1.0f - 0.999f * fTemp20) + 0.999f * fTemp20 * fRec34[1];
 			float fTemp21 = fRec33[1] + fSlow77 * fRec34[0];
@@ -15886,7 +15886,7 @@ class mydsp : public base_dsp {
 			float fTemp24 = ftbl1mydspSIG1[iTemp22];
 			fRec31[0] = fTemp24 * std::cos(fTemp19) + fTemp23 * std::sin(fTemp19);
 			output0[i0] = FAUSTFLOAT(fSlow78 * fRec31[0] * fTemp18);
-			float fTemp25 = float(input1[i0]) + fSlow75 * fRec36[1];
+			float fTemp25 = 3.1415927f * (float(input1[i0]) + fSlow75 * fRec36[1]);
 			fRec36[0] = fTemp24 * std::cos(fTemp25) + fTemp23 * std::sin(fTemp25);
 			output1[i0] = FAUSTFLOAT(fSlow78 * fRec36[0] * fTemp18);
 			iVec0[1] = iVec0[0];
