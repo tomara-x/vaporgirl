@@ -2,15 +2,14 @@
 
 <JUCERPROJECT id="L9dULy" name="nailgirl" projectType="audioplug" version="1.0.0"
               bundleIdentifier="com.grame.nailgirl" includeBinaryInAppConfig="1"
-              buildVST="0" buildVST3="1" buildAU="1" buildAUv3="1" buildRTAS="0"
-              buildAAX="0" buildStandalone="1" pluginName="nailgirl" pluginDesc="nailgirl"
-              pluginManufacturer="GRAME" pluginManufacturerCode="Manu" pluginCode="d134"
+              buildVST="0" buildVST3="1" buildAU="0" buildAUv3="0" buildRTAS="0"
+              buildAAX="0" buildStandalone="0" pluginName="nailgirl" pluginDesc="nailgirl"
+              pluginManufacturer="auau" pluginManufacturerCode="Auau" pluginCode="d134"
               pluginChannelConfigs="" pluginIsSynth="0" pluginWantsMidiIn="0"
               pluginProducesMidiOut="0" pluginIsMidiEffectPlugin="0" pluginEditorRequiresKeys="0"
-              pluginAUExportPrefix="nailgirlAU" pluginRTASCategory="" aaxIdentifier="com.grame.nailgirl"
-              pluginAAXCategory="2" pluginFormats="buildAU,buildAUv3,buildVST3,buildStandalone"
-              displaySplashScreen="1" jucerFormatVersion="1" enableIAA="0"
-              pluginCharacteristicsValue="">
+              pluginAUExportPrefix="nailgirlAU" pluginRTASCategory="" aaxIdentifier="com.auau.nailgirl"
+              pluginAAXCategory="2" pluginFormats="buildVST3" displaySplashScreen="1"
+              jucerFormatVersion="1" enableIAA="0" pluginCharacteristicsValue="">
   <MAINGROUP id="DIThxi" name="nailgirl">
     <GROUP id="{3EA8B881-7A5A-9E29-6E83-82528C15E424}" name="Source">
       <FILE id="BecAMR" name="FaustPluginProcessor.cpp" compile="1" resource="0"
@@ -39,6 +38,27 @@
         <MODULEPATH id="juce_audio_basics" path="../JUCE/modules"/>
       </MODULEPATHS>
     </VS2019>
+    <LINUX_MAKE targetFolder="Builds/LinuxMakefile">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="0" name="Release"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_opengl" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_osc" path="../JUCE/modules"/>
+      </MODULEPATHS>
+    </LINUX_MAKE>
   </EXPORTFORMATS>
   <MODULES>
     <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0"/>
