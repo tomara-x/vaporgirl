@@ -3,13 +3,14 @@
 <JUCERPROJECT id="L9dULy" name="nailgirl" projectType="audioplug" version="1.0.0"
               bundleIdentifier="com.grame.nailgirl" includeBinaryInAppConfig="1"
               buildVST="0" buildVST3="1" buildAU="0" buildAUv3="0" buildRTAS="0"
-              buildAAX="0" buildStandalone="0" pluginName="nailgirl" pluginDesc="nailgirl"
+              buildAAX="0" buildStandalone="1" pluginName="nailgirl" pluginDesc="nailgirl"
               pluginManufacturer="auau" pluginManufacturerCode="Auau" pluginCode="d134"
               pluginChannelConfigs="" pluginIsSynth="0" pluginWantsMidiIn="0"
               pluginProducesMidiOut="0" pluginIsMidiEffectPlugin="0" pluginEditorRequiresKeys="0"
               pluginAUExportPrefix="nailgirlAU" pluginRTASCategory="" aaxIdentifier="com.auau.nailgirl"
-              pluginAAXCategory="2" pluginFormats="buildVST3" displaySplashScreen="1"
-              jucerFormatVersion="1" enableIAA="0" pluginCharacteristicsValue="">
+              pluginAAXCategory="2" pluginFormats="buildStandalone,buildVST3"
+              displaySplashScreen="1" jucerFormatVersion="1" enableIAA="0"
+              pluginCharacteristicsValue="">
   <MAINGROUP id="DIThxi" name="nailgirl">
     <GROUP id="{3EA8B881-7A5A-9E29-6E83-82528C15E424}" name="Source">
       <FILE id="BecAMR" name="FaustPluginProcessor.cpp" compile="1" resource="0"

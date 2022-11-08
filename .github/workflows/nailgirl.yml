@@ -44,6 +44,7 @@ jobs:
         prerelease: false
         title: "nailgirl"
         files: |
+          nailgirl/Builds/VisualStudio2019/x64/Release/VST3/nailgirl.vst3
           nailgirl.zip
 
     # don't need these now
