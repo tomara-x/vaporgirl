@@ -44,6 +44,7 @@ jobs:
         prerelease: false
         title: "quadrotorgirl"
         files: |
+          quadrotorgirl/Builds/VisualStudio2019/x64/Release/VST3/quadrotorgirl.vst3
           quadrotorgirl.zip
 
     # don't need these now

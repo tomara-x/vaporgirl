@@ -44,6 +44,7 @@ jobs:
         prerelease: false
         title: "gaiagirl"
         files: |
+          gaiagirl/Builds/VisualStudio2019/x64/Release/VST3/gaiagirl.vst3
           gaiagirl.zip
 
     # don't need these now
