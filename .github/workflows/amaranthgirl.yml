@@ -44,6 +44,7 @@ jobs:
         prerelease: false
         title: "amaranthgirl"
         files: |
+          amaranthgirl/Builds/VisualStudio2019/x64/Release/VST3/amaranthgirl.vst3
           amaranthgirl.zip
 
     # don't need these now

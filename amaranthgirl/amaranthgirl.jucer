@@ -2,13 +2,13 @@
 
 <JUCERPROJECT id="L9dULy" name="amaranthgirl" projectType="audioplug" version="1.0.0"
               bundleIdentifier="com.grame.amaranthgirl" includeBinaryInAppConfig="1"
-              buildVST="0" buildVST3="1" buildAU="1" buildAUv3="1" buildRTAS="0"
+              buildVST="0" buildVST3="1" buildAU="0" buildAUv3="0" buildRTAS="0"
               buildAAX="0" buildStandalone="1" pluginName="amaranthgirl" pluginDesc="amaranthgirl"
-              pluginManufacturer="GRAME" pluginManufacturerCode="Manu" pluginCode="9271"
+              pluginManufacturer="auau" pluginManufacturerCode="Auau" pluginCode="9271"
               pluginChannelConfigs="" pluginIsSynth="0" pluginWantsMidiIn="0"
               pluginProducesMidiOut="0" pluginIsMidiEffectPlugin="0" pluginEditorRequiresKeys="0"
-              pluginAUExportPrefix="amaranthgirlAU" pluginRTASCategory="" aaxIdentifier="com.grame.amaranthgirl"
-              pluginAAXCategory="2" pluginFormats="buildAU,buildAUv3,buildVST3,buildStandalone"
+              pluginAUExportPrefix="amaranthgirlAU" pluginRTASCategory="" aaxIdentifier="com.auau.amaranthgirl"
+              pluginAAXCategory="2" pluginFormats="buildStandalone,buildVST3"
               displaySplashScreen="1" jucerFormatVersion="1" enableIAA="0"
               pluginCharacteristicsValue="">
   <MAINGROUP id="DIThxi" name="amaranthgirl">

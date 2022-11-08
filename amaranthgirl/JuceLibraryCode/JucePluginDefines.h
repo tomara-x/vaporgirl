@@ -17,10 +17,10 @@
  #define JucePlugin_Build_VST3             1
 #endif
 #ifndef  JucePlugin_Build_AU
- #define JucePlugin_Build_AU               1
+ #define JucePlugin_Build_AU               0
 #endif
 #ifndef  JucePlugin_Build_AUv3
- #define JucePlugin_Build_AUv3             1
+ #define JucePlugin_Build_AUv3             0
 #endif
 #ifndef  JucePlugin_Build_AAX
  #define JucePlugin_Build_AAX              0
@@ -47,7 +47,7 @@
  #define JucePlugin_Desc                   "amaranthgirl"
 #endif
 #ifndef  JucePlugin_Manufacturer
- #define JucePlugin_Manufacturer           "GRAME"
+ #define JucePlugin_Manufacturer           "auau"
 #endif
 #ifndef  JucePlugin_ManufacturerWebsite
  #define JucePlugin_ManufacturerWebsite    "www.yourcompany.com"
@@ -56,7 +56,7 @@
  #define JucePlugin_ManufacturerEmail      ""
 #endif
 #ifndef  JucePlugin_ManufacturerCode
- #define JucePlugin_ManufacturerCode       0x4d616e75
+ #define JucePlugin_ManufacturerCode       0x41756175
 #endif
 #ifndef  JucePlugin_PluginCode
  #define JucePlugin_PluginCode             0x39323731
@@ -113,7 +113,7 @@
  #define JucePlugin_CFBundleIdentifier     com.grame.amaranthgirl
 #endif
 #ifndef  JucePlugin_AAXIdentifier
- #define JucePlugin_AAXIdentifier          com.grame.amaranthgirl
+ #define JucePlugin_AAXIdentifier          com.auau.amaranthgirl
 #endif
 #ifndef  JucePlugin_AAXManufacturerCode
  #define JucePlugin_AAXManufacturerCode    JucePlugin_ManufacturerCode
@@ -137,7 +137,7 @@
  #define JucePlugin_IAASubType             JucePlugin_PluginCode
 #endif
 #ifndef  JucePlugin_IAAName
- #define JucePlugin_IAAName                "GRAME: amaranthgirl"
+ #define JucePlugin_IAAName                "auau: amaranthgirl"
 #endif
 #ifndef  JucePlugin_VSTNumMidiInputs
  #define JucePlugin_VSTNumMidiInputs       16
