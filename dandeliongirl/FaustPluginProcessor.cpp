@@ -2,7 +2,7 @@
 author: "amy universe"
 license: "WTFPL"
 name: "dandeliongirl"
-version: "0.04"
+version: "0.05"
 Code generated with Faust 2.50.6 (https://faust.grame.fr)
 Compilation options: -a /usr/local/share/faust/juce/juce-plugin.cpp -lang cpp -i -scn base_dsp -es 1 -mcd 16 -uim -single -ftz 0
 ------------------------------------------------------------ */
@@ -15078,7 +15078,7 @@ class mydsp : public base_dsp {
 		m->declare("name", "dandeliongirl");
 		m->declare("platform.lib/name", "Generic Platform Library");
 		m->declare("platform.lib/version", "0.2");
-		m->declare("version", "0.04");
+		m->declare("version", "0.05");
 	}
 
 	virtual int getNumInputs() {
@@ -15236,26 +15236,34 @@ class mydsp : public base_dsp {
 	
 	virtual void buildUserInterface(UI* ui_interface) {
 		ui_interface->openHorizontalBox("dandeliongirl");
-		ui_interface->openHorizontalBox("l");
+		ui_interface->openVerticalBox("l");
 		ui_interface->declare(&fCheckbox0, "-1", "");
-		ui_interface->addCheckButton("space windows", &fCheckbox0);
+		ui_interface->addCheckButton("space win", &fCheckbox0);
 		ui_interface->declare(&fVslider2, "0", "");
+		ui_interface->declare(&fVslider2, "style", "knob");
 		ui_interface->addVerticalSlider("window length (s)", &fVslider2, FAUSTFLOAT(0.1f), FAUSTFLOAT(0.001f), FAUSTFLOAT(4.0f), FAUSTFLOAT(0.001f));
 		ui_interface->declare(&fVslider3, "1", "");
+		ui_interface->declare(&fVslider3, "style", "knob");
 		ui_interface->addVerticalSlider("crossfade dur (s)", &fVslider3, FAUSTFLOAT(0.1f), FAUSTFLOAT(0.001f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
 		ui_interface->declare(&fVslider1, "2", "");
+		ui_interface->declare(&fVslider1, "style", "knob");
 		ui_interface->addVerticalSlider("shift (semitones)", &fVslider1, FAUSTFLOAT(1.0f), FAUSTFLOAT(-24.0f), FAUSTFLOAT(24.0f), FAUSTFLOAT(0.001f));
+		ui_interface->declare(&fVslider0, "style", "knob");
 		ui_interface->addVerticalSlider("wet", &fVslider0, FAUSTFLOAT(1.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.01f));
 		ui_interface->closeBox();
-		ui_interface->openHorizontalBox("r");
+		ui_interface->openVerticalBox("r");
 		ui_interface->declare(&fCheckbox1, "-1", "");
-		ui_interface->addCheckButton("space windows", &fCheckbox1);
+		ui_interface->addCheckButton("space win", &fCheckbox1);
 		ui_interface->declare(&fVslider6, "0", "");
+		ui_interface->declare(&fVslider6, "style", "knob");
 		ui_interface->addVerticalSlider("window length (s)", &fVslider6, FAUSTFLOAT(0.1f), FAUSTFLOAT(0.001f), FAUSTFLOAT(4.0f), FAUSTFLOAT(0.001f));
 		ui_interface->declare(&fVslider7, "1", "");
+		ui_interface->declare(&fVslider7, "style", "knob");
 		ui_interface->addVerticalSlider("crossfade dur (s)", &fVslider7, FAUSTFLOAT(0.1f), FAUSTFLOAT(0.001f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
 		ui_interface->declare(&fVslider5, "2", "");
+		ui_interface->declare(&fVslider5, "style", "knob");
 		ui_interface->addVerticalSlider("shift (semitones)", &fVslider5, FAUSTFLOAT(1.0f), FAUSTFLOAT(-24.0f), FAUSTFLOAT(24.0f), FAUSTFLOAT(0.001f));
+		ui_interface->declare(&fVslider4, "style", "knob");
 		ui_interface->addVerticalSlider("wet", &fVslider4, FAUSTFLOAT(1.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.01f));
 		ui_interface->closeBox();
 		ui_interface->closeBox();
@@ -15653,24 +15661,24 @@ class mydsp : public base_dsp {
 	#define FAUST_ACTIVES 10
 	#define FAUST_PASSIVES 0
 
-	FAUST_ADDCHECKBOX("dandeliongirl/l/space windows", fCheckbox0);
+	FAUST_ADDCHECKBOX("dandeliongirl/l/space win", fCheckbox0);
 	FAUST_ADDVERTICALSLIDER("dandeliongirl/l/window length (s)", fVslider2, 0.1f, 0.001f, 4.0f, 0.001f);
 	FAUST_ADDVERTICALSLIDER("dandeliongirl/l/crossfade dur (s)", fVslider3, 0.1f, 0.001f, 1.0f, 0.001f);
 	FAUST_ADDVERTICALSLIDER("dandeliongirl/l/shift (semitones)", fVslider1, 1.0f, -24.0f, 24.0f, 0.001f);
 	FAUST_ADDVERTICALSLIDER("dandeliongirl/l/wet", fVslider0, 1.0f, 0.0f, 1.0f, 0.01f);
-	FAUST_ADDCHECKBOX("dandeliongirl/r/space windows", fCheckbox1);
+	FAUST_ADDCHECKBOX("dandeliongirl/r/space win", fCheckbox1);
 	FAUST_ADDVERTICALSLIDER("dandeliongirl/r/window length (s)", fVslider6, 0.1f, 0.001f, 4.0f, 0.001f);
 	FAUST_ADDVERTICALSLIDER("dandeliongirl/r/crossfade dur (s)", fVslider7, 0.1f, 0.001f, 1.0f, 0.001f);
 	FAUST_ADDVERTICALSLIDER("dandeliongirl/r/shift (semitones)", fVslider5, 1.0f, -24.0f, 24.0f, 0.001f);
 	FAUST_ADDVERTICALSLIDER("dandeliongirl/r/wet", fVslider4, 1.0f, 0.0f, 1.0f, 0.01f);
 
 	#define FAUST_LIST_ACTIVES(p) \
-		p(CHECKBOX, space_windows, "dandeliongirl/l/space windows", fCheckbox0, 0.0f, 0.0f, 1.0f, 1.0f) \
+		p(CHECKBOX, space_win, "dandeliongirl/l/space win", fCheckbox0, 0.0f, 0.0f, 1.0f, 1.0f) \
 		p(VERTICALSLIDER, window_length_(s), "dandeliongirl/l/window length (s)", fVslider2, 0.1f, 0.001f, 4.0f, 0.001f) \
 		p(VERTICALSLIDER, crossfade_dur_(s), "dandeliongirl/l/crossfade dur (s)", fVslider3, 0.1f, 0.001f, 1.0f, 0.001f) \
 		p(VERTICALSLIDER, shift_(semitones), "dandeliongirl/l/shift (semitones)", fVslider1, 1.0f, -24.0f, 24.0f, 0.001f) \
 		p(VERTICALSLIDER, wet, "dandeliongirl/l/wet", fVslider0, 1.0f, 0.0f, 1.0f, 0.01f) \
-		p(CHECKBOX, space_windows, "dandeliongirl/r/space windows", fCheckbox1, 0.0f, 0.0f, 1.0f, 1.0f) \
+		p(CHECKBOX, space_win, "dandeliongirl/r/space win", fCheckbox1, 0.0f, 0.0f, 1.0f, 1.0f) \
 		p(VERTICALSLIDER, window_length_(s), "dandeliongirl/r/window length (s)", fVslider6, 0.1f, 0.001f, 4.0f, 0.001f) \
 		p(VERTICALSLIDER, crossfade_dur_(s), "dandeliongirl/r/crossfade dur (s)", fVslider7, 0.1f, 0.001f, 1.0f, 0.001f) \
 		p(VERTICALSLIDER, shift_(semitones), "dandeliongirl/r/shift (semitones)", fVslider5, 1.0f, -24.0f, 24.0f, 0.001f) \
