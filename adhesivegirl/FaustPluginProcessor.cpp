@@ -2,7 +2,7 @@
 author: "amy universe"
 license: "WTFPL"
 name: "adhesivegirl"
-version: "0.10"
+version: "0.11"
 Code generated with Faust 2.50.6 (https://faust.grame.fr)
 Compilation options: -a /usr/local/share/faust/juce/juce-plugin.cpp -lang cpp -i -scn base_dsp -es 1 -mcd 16 -uim -single -ftz 0
 ------------------------------------------------------------ */
@@ -15067,8 +15067,8 @@ class mydsp : public base_dsp {
 	float fConst1;
 	float fRec4[2];
 	FAUSTFLOAT fVslider4;
-	float fConst2;
 	FAUSTFLOAT fVslider5;
+	float fConst2;
 	FAUSTFLOAT fVslider6;
 	FAUSTFLOAT fVslider7;
 	int iRec41[2];
@@ -16654,7 +16654,7 @@ class mydsp : public base_dsp {
 		m->declare("routes.lib/version", "0.2");
 		m->declare("signals.lib/name", "Faust Signal Routing Library");
 		m->declare("signals.lib/version", "0.3");
-		m->declare("version", "0.10");
+		m->declare("version", "0.11");
 	}
 
 	virtual int getNumInputs() {
@@ -22177,7 +22177,7 @@ class mydsp : public base_dsp {
 			fRec5[0] = ((iTemp2) ? fElse0 : fRec5[1]);
 			fRec4[0] = 0.0f - fSlow9 * (fSlow8 * fRec4[1] - (fRec5[0] + fRec5[1]));
 			float fTemp35 = fSlow10 * fRec4[0] * (fSlow4 + fTemp1);
-			float fTemp36 = std::tan(fConst1 * (fSlow11 + std::min<float>(fTemp35, fConst2)));
+			float fTemp36 = std::tan(fConst1 * std::min<float>(fSlow11 + fTemp35, fConst2));
 			float fTemp37 = fTemp36 * (fSlow12 + fTemp36) + 1.0f;
 			iRec41[0] = (iVec0[1] + iRec41[1]) % iSlow13;
 			int iTemp38 = iRec41[0] <= iRec41[1];
@@ -22839,7 +22839,7 @@ class mydsp : public base_dsp {
 			fRec400[0] = ((iTemp174) ? fElse160 : fRec400[1]);
 			fRec399[0] = 0.0f - fSlow140 * (fSlow139 * fRec399[1] - (fRec400[0] + fRec400[1]));
 			float fTemp175 = fSlow141 * fRec399[0] * (fSlow135 + fTemp1);
-			float fTemp176 = std::tan(fConst1 * (fSlow142 + std::min<float>(fTemp175, fConst2)));
+			float fTemp176 = std::tan(fConst1 * std::min<float>(fSlow142 + fTemp175, fConst2));
 			float fTemp177 = fTemp176 * (fSlow143 + fTemp176) + 1.0f;
 			iRec404[0] = (iVec0[1] + iRec404[1]) % iSlow144;
 			int iTemp178 = iRec404[0] <= iRec404[1];
@@ -23467,7 +23467,7 @@ class mydsp : public base_dsp {
 			fRec760[0] = ((iTemp282) ? fElse320 : fRec760[1]);
 			fRec759[0] = 0.0f - fSlow270 * (fSlow269 * fRec759[1] - (fRec760[0] + fRec760[1]));
 			float fTemp283 = fSlow271 * fRec759[0] * (fSlow265 + fTemp1);
-			float fTemp284 = std::tan(fConst1 * (fSlow272 + std::min<float>(fTemp283, fConst2)));
+			float fTemp284 = std::tan(fConst1 * std::min<float>(fSlow272 + fTemp283, fConst2));
 			float fTemp285 = fTemp284 * (fSlow273 + fTemp284) + 1.0f;
 			iRec764[0] = (iVec0[1] + iRec764[1]) % iSlow274;
 			int iTemp286 = iRec764[0] <= iRec764[1];
@@ -24095,7 +24095,7 @@ class mydsp : public base_dsp {
 			fRec1120[0] = ((iTemp390) ? fElse480 : fRec1120[1]);
 			fRec1119[0] = 0.0f - fSlow400 * (fSlow399 * fRec1119[1] - (fRec1120[0] + fRec1120[1]));
 			float fTemp391 = fSlow401 * fRec1119[0] * (fSlow395 + fTemp1);
-			float fTemp392 = std::tan(fConst1 * (fSlow402 + std::min<float>(fTemp391, fConst2)));
+			float fTemp392 = std::tan(fConst1 * std::min<float>(fSlow402 + fTemp391, fConst2));
 			float fTemp393 = fTemp392 * (fSlow403 + fTemp392) + 1.0f;
 			iRec1124[0] = (iVec0[1] + iRec1124[1]) % iSlow404;
 			int iTemp394 = iRec1124[0] <= iRec1124[1];
