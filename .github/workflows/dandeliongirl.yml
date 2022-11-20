@@ -1,10 +1,10 @@
-name: dandelion
+name: dandeliongirl
 
 on:
   push:
     paths:
-      - 'dandelion/**'
-        #- '.github/workflows/dandelion.yml' #testing
+      - 'dandeliongirl/**'
+        #- '.github/workflows/dandeliongirl.yml' #testing
 
 jobs:
   mac:
@@ -16,7 +16,7 @@ jobs:
           submodules: recursive
       - name: set default scheme
         run: |
-          cd dandelion/Builds/MacOSX
+          cd dandeliongirl/Builds/MacOSX
           scheme_list=$(xcodebuild -list -json | tr -d "\n")
           default=$(echo $scheme_list | ruby -e "require 'json'; puts JSON.parse(STDIN.gets)['project']['targets'][0]")
           echo $default | cat >default
@@ -25,7 +25,7 @@ jobs:
         env:
           scheme: ${{ 'default' }}
         run: |
-          cd dandelion/Builds/MacOSX
+          cd dandeliongirl/Builds/MacOSX
           if [ $scheme = default ]; then scheme=$(cat default); fi
           if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
           file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
@@ -33,9 +33,9 @@ jobs:
       - name: save artifact
         uses: actions/upload-artifact@v3
         with:
-          name: dandelion-mac
+          name: dandeliongirl-mac
           path: |
-            dandelion/Builds/MacOSX/build/Release
+            dandeliongirl/Builds/MacOSX/build/Release
   win:
     runs-on: windows-latest
     steps:
@@ -46,13 +46,13 @@ jobs:
       uses: microsoft/setup-msbuild@v1.1
     - name: build
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: msbuild /m /p:Configuration=Release dandelion/Builds/VisualStudio2019/dandelion.sln
+      run: msbuild /m /p:Configuration=Release dandeliongirl/Builds/VisualStudio2019/dandeliongirl.sln
     - name: save artifacts
       uses: actions/upload-artifact@v3
       with:
-        name: dandelion-win
+        name: dandeliongirl-win
         path: |
-          dandelion\Builds\VisualStudio2019\x64\Release
+          dandeliongirl\Builds\VisualStudio2019\x64\Release
   release:
     runs-on: ubuntu-latest
     needs: [mac, win]
@@ -61,16 +61,16 @@ jobs:
       - name: ziptie
         run: |
           mkdir void
-          zip -r dandelion-mac-vst.zip dandelion-mac/dandelion.vst3/
-          zip -r dandelion-mac.zip dandelion-mac/
-          zip -r dandelion-win.zip dandelion-win/
-          cp dandelion-mac-vst.zip dandelion-mac.zip dandelion-win/VST3/dandelion.vst3 dandelion-win.zip void/
+          zip -r dandeliongirl-mac-vst.zip dandeliongirl-mac/dandeliongirl.vst3/
+          zip -r dandeliongirl-mac.zip dandeliongirl-mac/
+          zip -r dandeliongirl-win.zip dandeliongirl-win/
+          cp dandeliongirl-mac-vst.zip dandeliongirl-mac.zip dandeliongirl-win/VST3/dandeliongirl.vst3 dandeliongirl-win.zip void/
       - name: release
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: void/*
-          tag: dandelion
+          tag: dandeliongirl
           overwrite: false
           file_glob: true
           body: "may you be healthy"
