@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT id="L9dULy" name="butt" projectType="audioplug" version="1.0.0"
-              bundleIdentifier="com.grame.butt" includeBinaryInAppConfig="1"
+              bundleIdentifier="com.auau.butt" includeBinaryInAppConfig="1"
               buildVST="0" buildVST3="1" buildAU="0" buildAUv3="0" buildRTAS="0"
               buildAAX="0" buildStandalone="1" pluginName="butt" pluginDesc="butt"
               pluginManufacturer="auau" pluginManufacturerCode="Auau" pluginCode="6e16"

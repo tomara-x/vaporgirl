@@ -4,53 +4,73 @@ on:
   push:
     paths:
       - 'butt/**'
-
-env:
-  # Path to the solution file relative to the root of the project.
-  SOLUTION_FILE_PATH: ./butt/Builds/VisualStudio2019/butt.sln
-
-  # Configuration type to build.
-  # You can convert this to a build matrix if you need coverage of multiple configuration types.
-  # https://docs.github.com/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
-  BUILD_CONFIGURATION: Release
+        #- '.github/workflows/butt.yml' #testing
 
 jobs:
-  build:
+  mac:
+    runs-on: macos-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+      - name: set default scheme
+        run: |
+          cd butt/Builds/MacOSX
+          scheme_list=$(xcodebuild -list -json | tr -d "\n")
+          default=$(echo $scheme_list | ruby -e "require 'json'; puts JSON.parse(STDIN.gets)['project']['targets'][0]")
+          echo $default | cat >default
+          echo Using default scheme: $default
+      - name: build
+        env:
+          scheme: ${{ 'default' }}
+        run: |
+          cd butt/Builds/MacOSX
+          if [ $scheme = default ]; then scheme=$(cat default); fi
+          if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
+          file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
+          xcodebuild clean build -scheme "$scheme" -"$filetype_parameter" "$file_to_build" | xcpretty && exit ${PIPESTATUS[0]}
+      - name: save artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: butt-mac
+          path: |
+            butt/Builds/MacOSX/build/Release
+  win:
     runs-on: windows-latest
-
     steps:
     - uses: actions/checkout@v3
       with:
         submodules: recursive
-
     - name: add msbuild to path
       uses: microsoft/setup-msbuild@v1.1
-
     - name: build
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      # Add additional options to the MSBuild command line here (like platform or verbosity level).
-      # See https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference
-      run: msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} ${{env.SOLUTION_FILE_PATH}}
-      
-    - name: ziptie..
-      shell: bash
-      run: 7z a -tzip butt.zip -r butt/Builds/VisualStudio2019/x64/Release
-
-    - name: release
-      uses: "marvinpinto/action-automatic-releases@latest"
+      run: msbuild /m /p:Configuration=Release butt/Builds/VisualStudio2019/butt.sln
+    - name: save artifacts
+      uses: actions/upload-artifact@v3
       with:
-        repo_token: "${{ secrets.GITHUB_TOKEN }}"
-        automatic_release_tag: "butt"
-        prerelease: false
-        title: "butt"
-        files: |
-          butt/Builds/VisualStudio2019/x64/Release/VST3/butt.vst3
-          butt.zip
-
-    # don't need these now
-    #- name: save artifact
-    #  uses: actions/upload-artifact@v3
-    #  with:
-    #    name: butt-release
-    #    path: butt\Builds\VisualStudio2019\x64\Release
-
+        name: butt-win
+        path: |
+          butt\Builds\VisualStudio2019\x64\Release
+  release:
+    runs-on: ubuntu-latest
+    needs: [mac, win]
+    steps:
+      - uses: actions/download-artifact@v3
+      - name: ziptie
+        run: |
+          mkdir void
+          zip -r butt-mac-vst.zip butt-mac/butt.vst3/
+          zip -r butt-mac.zip butt-mac/
+          zip -r butt-win.zip butt-win/
+          cp butt-mac-vst.zip butt-mac.zip butt-win/VST3/butt.vst3 butt-win.zip void/
+      - name: release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: void/*
+          tag: butt
+          overwrite: false
+          file_glob: true
+          body: "may you live well"
