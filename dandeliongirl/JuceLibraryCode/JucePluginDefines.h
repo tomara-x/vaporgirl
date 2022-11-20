@@ -110,7 +110,7 @@
  #define JucePlugin_AUManufacturerCode     JucePlugin_ManufacturerCode
 #endif
 #ifndef  JucePlugin_CFBundleIdentifier
- #define JucePlugin_CFBundleIdentifier     com.grame.dandeliongirl
+ #define JucePlugin_CFBundleIdentifier     com.auau.dandeliongirl
 #endif
 #ifndef  JucePlugin_AAXIdentifier
  #define JucePlugin_AAXIdentifier          com.auau.dandeliongirl
